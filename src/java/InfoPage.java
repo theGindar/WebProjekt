@@ -34,7 +34,8 @@ public class InfoPage extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/InfoPage.jsp");
+            request.setAttribute("rating", 3);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/infopage/InfoPage.jsp");
             dispatcher.forward(request, response);
         }
     }

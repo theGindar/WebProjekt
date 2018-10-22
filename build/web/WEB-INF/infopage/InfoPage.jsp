@@ -1,3 +1,10 @@
+<%-- 
+    Document   : InfoPage
+    Created on : Oct 14, 2018, 3:26:07 PM
+    Author     : trybeforeyoubuy
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -29,11 +36,9 @@
             </div>
         </div>
         <div class="row justify-content-center align-items-center align-content-center" id="ratingrow">
-            <div class="col offset-1" style="margin: 0px;"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
-            <div class="col offset-1"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
-            <div class="col offset-1"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
-            <div class="col offset-1"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
-            <div class="col offset-1"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
+            <% for(int i = 0; i < Integer.parseInt(request.getAttribute("rating").toString()); i++){ %>
+                <div class="col offset-1"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
+            <% } %>
         </div>
     </section>
     <section class="info">
@@ -50,13 +55,12 @@
             <div class="card-body">
                 <h4 class="card-title">Title</h4>
                 <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                <div class="row justify-content-center align-items-center align-content-center"
-                    id="ratingrow">
+                <div class="row justify-content-center align-items-center align-content-center" id="ratingrow">
                     <div class="col offset-1" style="margin: 0px;"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
-                    <div class="col offset-1"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
-                    <div class="col offset-1"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
-                    <div class="col offset-1"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
-                    <div class="col offset-1"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
+                    <div class="col offset-1" style="margin: 0px;"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
+                    <div class="col offset-1" style="margin: 0px;"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
+                    <div class="col offset-1" style="margin: 0px;"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
+                    <div class="col offset-1" style="margin: 0px;"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
                 </div>
             </div>
         </div>
