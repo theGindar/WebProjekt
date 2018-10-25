@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : InfoPage
     Created on : Oct 14, 2018, 3:26:07 PM
     Author     : trybeforeyoubuy
@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>viewhotel</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <!--<link rel="stylesheet" href="assets/css/styles.min.css">-->
 </head>
 
 <body>
@@ -32,7 +32,7 @@
     <section id="start">
         <div class="row">
             <div class="col">
-                <h1 class="text-center" id="mainheading">Heading</h1>
+                <h1 class="text-center myheading" id="mainheading">Heading</h1>
             </div>
         </div>
         <div class="row justify-content-center align-items-center align-content-center" id="ratingrow">
@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col"><img src="assets/img/hotelbsppic.jpg" class="infoimage"></div>
             <div class="col">
-                <p class="infoparagraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
+                <p class="infoparagraph">111111111Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
             </div>
         </div>
         <div></div>
