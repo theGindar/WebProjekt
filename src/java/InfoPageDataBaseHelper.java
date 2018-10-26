@@ -6,9 +6,9 @@
 
 /**
  *
- * @author trybeforeyoubuy
+ * @author Patrick Guenther
  */
-public class InfoPageDataBaseHelper {
+public class InfoPageDataBaseHelper extends DataBaseHelper {
     protected void getHotelNameFromDB(){
     
     }
