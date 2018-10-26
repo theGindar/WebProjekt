@@ -39,6 +39,21 @@ public class InfoPage extends HttpServlet {
             dispatcher.forward(request, response);
         }
     }
+    protected void getHotelNameFromDB(){
+    
+    }
+    protected void getMainRatingFromDB(){
+        
+    }
+    protected void getMainImageFromDB(){
+    
+    }
+    protected void getInfoCardsFromDB(){
+    
+    }
+    protected void getRatingCardsFromDB(){
+    
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
