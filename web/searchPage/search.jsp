@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -46,7 +47,7 @@
         </div>
       </div>
       <div class="col-md-2">
-        <button type="button" class="btn btn-primary btn-block">Search</button>
+        <button type="submit" class="btn btn-primary btn-block">Search</button>
       </div>
     </div>
   </div>
