@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author trybeforeyoubuy
+ * @author Patrick Guenther
  */
 @WebServlet(urlPatterns = {"/InfoPage"})
 public class InfoPage extends HttpServlet {
