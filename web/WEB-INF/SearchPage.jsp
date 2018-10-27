@@ -15,41 +15,94 @@
 
     <body>
         <div class="container-fluid bg-light p-3 mb-5">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-md-2 pt-3">
-                    <div class="form-group ">
-                        <select id="inputState" class="form-control">
-                            <option selected>Stadt</option>
-                            <c:forEach items="${stadtKategorien}" var="stadtKategorie">
-                                <option>${stadtKategorie}</option>
-                            </c:forEach>
-                        </select>
+            <form action="" method="POST">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-2 pt-3">
+                        <div class="form-group ">
+                            <select name="chosenStadtKategorie" id="inputState" class="form-control">
+                                <c:choose>  
+                                    <c:when test="${chosenStadtKategorie == null}">  
+                                        <option selected>Stadt</option>
+                                        <c:forEach items="${stadtKategorien}" var="stadtKategorie">
+                                            <option>${stadtKategorie}</option>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>  
+                                        <option>Stadt</option>
+                                        <c:forEach items="${stadtKategorien}" var="stadtKategorie">
+                                            <c:choose>  
+                                                <c:when test="${stadtKategorie == chosenStadtKategorie}">  
+                                                    <option selected>${stadtKategorie}</option>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <option>${stadtKategorie}</option>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>  
+                                    </c:otherwise>  
+                                </c:choose>  
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2 pt-3">
+                        <div class="form-group">
+                            <select name="chosenUnterkunftKategorie" id="inputState" class="form-control">
+                                <c:choose>  
+                                    <c:when test="${chosenUnterkunftKategorie == null}">  
+                                        <option selected>Unterkunft</option>
+                                        <c:forEach items="${unterkunftKategorien}" var="unterkunftKategorie">
+                                            <option>${unterkunftKategorie}</option>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>  
+                                        <option>Unterkunft</option>
+                                        <c:forEach items="${unterkunftKategorien}" var="unterkunftKategorie">
+                                            <c:choose>  
+                                                <c:when test="${unterkunftKategorie == chosenUnterkunftKategorie}">  
+                                                    <option selected>${unterkunftKategorie}</option>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <option>${unterkunftKategorie}</option>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>  
+                                    </c:otherwise>  
+                                </c:choose>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2 pt-3">
+                        <div class="form-group">
+                            <select name="chosenBudgetKategorie" id="inputState" class="form-control">
+                                <c:choose>  
+                                    <c:when test="${chosenBudgetKategorie == null}">  
+                                        <option selected>Budget</option>
+                                        <c:forEach items="${budgetKategorien}" var="budgetKategorie">
+                                            <option value="${budgetKategorie}">&lt;${budgetKategorie}€</option>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>  
+                                        <option>Budget</option>
+                                        <c:forEach items="${budgetKategorien}" var="budgetKategorie">
+                                            <c:choose>  
+                                                <c:when test="${budgetKategorie == chosenBudgetKategorie}">  
+                                                    <option selected value="${budgetKategorie}">&lt;${budgetKategorie}€</option>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <option value="${budgetKategorie}">&lt;${budgetKategorie}€</option>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>  
+                                    </c:otherwise>  
+                                </c:choose>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary btn-block">Search</button>
                     </div>
                 </div>
-                <div class="col-md-2 pt-3">
-                    <div class="form-group">
-                        <select id="inputState" class="form-control">
-                            <option selected>Unterkunft</option>
-                            <c:forEach items="${unterkunftKategorien}" var="unterkunftKategorie">
-                                <option>${unterkunftKategorie}</option>
-                            </c:forEach>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-2 pt-3">
-                    <div class="form-group">
-                        <select id="inputState" class="form-control">
-                            <option selected>Budget</option>
-                            <c:forEach items="${budgetKategorien}" var="budgetKategorie">
-                                <option>${budgetKategorie}</option>
-                            </c:forEach>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-primary btn-block">Search</button>
-                </div>
-            </div>
+            </form>
         </div>
 
         <div class="container-fluid">
@@ -59,7 +112,7 @@
                         <div class="card my-3 mx-md-5 bg-light">
                             <div class="card-body">
                                 <img class="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF7WtLzw4tyyOXKlgTYC1fDu4NTMyz3z1FDgtVMdXzuuJfFy6e0g" alt="Hotel 1" />
-                                <h2>${unterkunft}</h2>
+                                <h2>${unterkunft}:</h2>
                                 <p>
                                     ${unterkunft}
                                 </p>

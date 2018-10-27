@@ -38,11 +38,8 @@ public class SearchPageServlet extends HttpServlet {
 
         // Werte im Session Kontext entfernen, damit wir beim nächsten mal
         // wieder von vorne anfangen
-        HttpSession session = request.getSession();
-        session.removeAttribute("vorname");
-        session.removeAttribute("nachname");
-        session.removeAttribute("fehlermeldungen");
-        session.removeAttribute("showGreeting");
+        //HttpSession session = request.getSession();
+        //session.removeAttribute("vorname");
     }
 
     @Override
@@ -51,25 +48,25 @@ public class SearchPageServlet extends HttpServlet {
 
         // Anfrage an eine JSP weiterleiten, um damit den HTML-Code
         // der Seite zu generieren
-        String stadt = (String) request.getAttribute("stadt");
-        String unterkunft = (String) request.getAttribute("unterkunft");
-        String budget = (String) request.getAttribute("budget");
-
+        String chosenStadtKategorie = (String) request.getParameter("chosenStadtKategorie");
+        String chosenUnterkunftKategorie = (String) request.getParameter("chosenUnterkunftKategorie");
+        String chosenBudgetKategorie = (String) request.getParameter("chosenBudgetKategorie");
+                
+        
         HttpSession session = request.getSession();
 
         //überprüfen, ob Attribute im Feld in der Suche eingegeben werden können
-        session.setAttribute("stadt", stadt);
-        session.setAttribute("unterkunft", unterkunft);
-        session.setAttribute("budget", budget);
-
-        //session.removeAttribute("attribut");
+        session.setAttribute("chosenStadtKategorie", chosenStadtKategorie);
+        session.setAttribute("chosenUnterkunftKategorie", chosenUnterkunftKategorie);
+        session.setAttribute("chosenBudgetKategorie", chosenBudgetKategorie);
+        
+        response.sendRedirect(request.getRequestURI());
     }
 
     private ArrayList<String> getStadtKategorien() {
         ArrayList<String> stadtKategorien = new ArrayList();
 
         stadtKategorien.add("Bremen");
-        stadtKategorien.add("Köln");
         stadtKategorien.add("Berlin");
         stadtKategorien.add("Erfurt");
         stadtKategorien.add("Leipzig");
@@ -92,9 +89,9 @@ public class SearchPageServlet extends HttpServlet {
     private ArrayList<String> getBudgetKategorien() {
         ArrayList<String> budgetKategorien = new ArrayList();
 
-        budgetKategorien.add("&lt;20€");
-        budgetKategorien.add("&lt;25€");
-        budgetKategorien.add("&lt;200€");
+        budgetKategorien.add("20");
+        budgetKategorien.add("25");
+        budgetKategorien.add("200");
 
         return budgetKategorien;
     }
