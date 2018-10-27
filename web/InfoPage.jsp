@@ -29,7 +29,8 @@
             </div>
         </div>
     </nav>
-    <section id="start" style='background-image: url("assets/img/hotel.jpg");'>
+    <%String imgname = request.getAttribute("mainpicture").toString();%>
+    <section id="start" style='background-image: url("assets/img/<%=imgname%>.jpg");'>
         <div class="row" style="margin-right: 0px;">
             <div class="col">
                 <%String mainheading = request.getAttribute("hotelname").toString();%>
@@ -47,31 +48,35 @@
         </div>
     </section>
     <section class="secondarysection">
-        <div class="card">
-            <div class="card-body">
-                <div class="row infocolumn">
-                    <div class="col my-auto"><img class="rounded img-fluid infoimage" src="assets/img/hotelbsppic.jpg"></div>
-                    <div class="col">
-                        <p class="infoparagraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
+        <%String[][] infocards = (String[][])request.getAttribute("infocards");%>
+        <%for(int i = 0; i < infocards.length; i++){%>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row infocolumn">
+                        <div class="col my-auto"><img class="rounded img-fluid infoimage" src="assets/img/<%=infocards[i][0]%>.jpg"></div>
+                        <div class="col">
+                            <p class="infoparagraph"><%=infocards[i][1]%></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <% } %>
     </section>
     <section class="secondarysection">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                <div class="row no-gutters align-content-center smallratingrow">
-                    <div class="col offset-1" style="margin: 0px;"><img src="assets/img/ratingicon.png" class="smallratingicon"></div>
-                    <div class="col offset-1"><img src="assets/img/ratingicon.png" class="smallratingicon"></div>
-                    <div class="col offset-1"><img src="assets/img/ratingicon.png" class="smallratingicon"></div>
-                    <div class="col offset-1"><img src="assets/img/ratingicon.png" class="smallratingicon"></div>
-                    <div class="col offset-1"><img src="assets/img/ratingicon.png" class="smallratingicon"></div>
+        <%String[][] ratingcards = (String[][])request.getAttribute("ratingcards");%>
+        <%for(int i = 0; i < ratingcards.length; i++){%>
+            <div class="card">    
+                <div class="card-body">
+                    <h4 class="card-title"><%=ratingcards[i][0]%></h4>
+                    <p class="card-text"><%=ratingcards[i][1]%></p>
+                    <div class="row no-gutters align-content-center smallratingrow">
+                        <%for(int j = 0; j < Integer.parseInt(ratingcards[i][2]); j++){%>
+                            <div class="col offset-1"><img src="assets/img/ratingicon.png" class="smallratingicon"></div>
+                        <% } %>
+                    </div>
                 </div>
             </div>
-        </div>
+        <% } %>
     </section>
     <section style="background-color: #ffffff;margin: 30px;padding: 20px;">
         <div class="row">
