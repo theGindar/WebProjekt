@@ -9,7 +9,7 @@ body {
 #start {
   width: 100%;
   height: 85vh;
-  background-image: filter(url("../assets1/img/hotel.jpg"),brightness(0.7));
+  /*background-image: filter(url("../../assets/img/hotel.jpg"),brightness(0.7));*/
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

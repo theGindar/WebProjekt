@@ -29,7 +29,7 @@
             </div>
         </div>
     </nav>
-    <section id="start">
+    <section id="start" style='background-image: url("assets/img/hotel.jpg");'>
         <div class="row" style="margin-right: 0px;">
             <div class="col">
                 <%String mainheading = request.getAttribute("hotelname").toString();%>
