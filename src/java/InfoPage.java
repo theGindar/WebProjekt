@@ -35,13 +35,23 @@ public class InfoPage extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             request.setAttribute("hotelname", "TESTHOTEL1");
-            request.setAttribute("mainpicture", "assets/img/hotel.jpg" );
+            request.setAttribute("mainpicture", "hotel" );
             request.setAttribute("rating", 3);
+            String[][] infocardarray = new String[][]{
+                {"hotelbsppic", "lorem ipsum1"},
+                {"hotelbsppic", "lorem ipsum2"}
+            };
+            request.setAttribute("infocards", infocardarray);
+            String[][] ratingcardarray = new String[][]{
+                {"titel1", "asasdkfjadöfkj","3"},
+                {"titel2", "tgbfggbefbe", "2"},
+                {"titel3", "zuikzuktujkt", "5"}
+            };
+            request.setAttribute("ratingcards", ratingcardarray);
             RequestDispatcher dispatcher = request.getRequestDispatcher("InfoPage.jsp");
             dispatcher.forward(request, response);
         }
     }
-    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
