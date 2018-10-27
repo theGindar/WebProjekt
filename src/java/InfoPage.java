@@ -32,9 +32,11 @@ public class InfoPage extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        InfoPageDataBaseHelper dbHelper = new InfoPageDataBaseHelper();
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            request.setAttribute("hotelname", "TESTHOTEL1");
+            request.setAttribute("hotelname", dbHelper.getHotelNameFromDB(1));
             request.setAttribute("mainpicture", "hotel" );
             request.setAttribute("rating", 3);
             String[][] infocardarray = new String[][]{
