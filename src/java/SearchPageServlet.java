@@ -23,7 +23,12 @@ public class SearchPageServlet extends HttpServlet {
         List<String> unterkunftKategorien = this.getUnterkunftKategorien();
         List<String> budgetKategorien = this.getBudgetKategorien();
 
-        List<Unterkunft> unterkuenfte = this.getUnterkuenfte();
+        String chosenStadtKategorie = request.getParameter("chosenStadtKategorie");
+        String chosenUnterkunftKategorie = request.getParameter("chosenUnterkunftKategorie");
+        //int chosenBudgetKategorie = Integer.parseInt(request.getParameter("chosenBudgetKategorie"));
+        int chosenBudgetKategorie = 20;
+        
+        List<Unterkunft> unterkuenfte = this.getUnterkuenfte(chosenStadtKategorie, chosenUnterkunftKategorie, chosenBudgetKategorie);
 
         request.setAttribute("stadtKategorien", stadtKategorien);
         request.setAttribute("unterkunftKategorien", unterkunftKategorien);
@@ -51,15 +56,14 @@ public class SearchPageServlet extends HttpServlet {
         String chosenStadtKategorie = (String) request.getParameter("chosenStadtKategorie");
         String chosenUnterkunftKategorie = (String) request.getParameter("chosenUnterkunftKategorie");
         String chosenBudgetKategorie = (String) request.getParameter("chosenBudgetKategorie");
-                
-        
+
         HttpSession session = request.getSession();
 
         //überprüfen, ob Attribute im Feld in der Suche eingegeben werden können
         session.setAttribute("chosenStadtKategorie", chosenStadtKategorie);
         session.setAttribute("chosenUnterkunftKategorie", chosenUnterkunftKategorie);
         session.setAttribute("chosenBudgetKategorie", chosenBudgetKategorie);
-        
+
         response.sendRedirect(request.getRequestURI());
     }
 
@@ -96,12 +100,13 @@ public class SearchPageServlet extends HttpServlet {
         return budgetKategorien;
     }
 
-    private ArrayList<Unterkunft> getUnterkuenfte() {
+    private ArrayList<Unterkunft> getUnterkuenfte(String chosenStadtKategorie, String chosenUnterkunftKategorie, int chosenBudgetKategorie) {
         ArrayList<Unterkunft> unterkuenfte = new ArrayList();
 
-        unterkuenfte.add(new Unterkunft("Vollpension", 30, "cool", 3, "Hotel am Graben"));
-        unterkuenfte.add(new Unterkunft("Halbpension", 20, "sehr cool", 4, "Herberge am Graben"));
-        unterkuenfte.add(new Unterkunft("Vollpension", 50, "cool", 5, "Luxushotel für Schluffis"));
+        unterkuenfte.add(new Unterkunft("Vollpension", chosenBudgetKategorie, "cool", 3, "Hotel am Graben", chosenStadtKategorie, chosenUnterkunftKategorie));
+        unterkuenfte.add(new Unterkunft("Vollpension", 30, "cool", 3, "Hotel am Graben", "Grabenstadt", "Hotel"));
+        unterkuenfte.add(new Unterkunft("Halbpension", 20, "sehr cool", 4, "Herberge am Graben", "Grabenstadt", "Herberge"));
+        unterkuenfte.add(new Unterkunft("Vollpension", 50, "cool", 5, "Luxushotel für Schluffis", "Schluffistadt", "Hotel"));
 
         return unterkuenfte;
     }
