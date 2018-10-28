@@ -23,20 +23,20 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
             rs.next();
             return rs.getString(1);
         } catch (SQLException ex) {
-            System.out.println("fail in InfoPageDataBaseHelper.java: ......" + ex);
-            return null; //!!!!!!!!!!!!!!!!!
+            System.out.println(ex);
+            return null;
         }
     }
-    protected void getMainRatingFromDB(int hotelID){
-        
+    protected int getMainRatingFromDB(int hotelID){
+        return 0;
     }
-    protected void getMainImageFromDB(int hotelID){
-    
+    protected String getMainImageFromDB(int hotelID){
+        return null;
     }
-    protected void getInfoCardsFromDB(int hotelID){
-    
+    protected String[][] getInfoCardsFromDB(int hotelID){
+        return null;
     }
-    protected void getRatingCardsFromDB(int hotelID){
-    
+    protected String[][] getRatingCardsFromDB(int hotelID){
+        return null;
     }
 }

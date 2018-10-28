@@ -19,7 +19,7 @@ public class DataBaseHelper {
         //File dataBase = new File("../../database/HotelDataBase");
         try{
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-            Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234");
+            Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
             java.sql.Statement dbStatement = connection.createStatement();
             ResultSet rs = dbStatement.executeQuery(query);
             System.out.println("success");
