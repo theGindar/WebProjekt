@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : InfoPage
     Created on : Oct 26, 2018, 12:50:57 PM
     Author     : trybeforeyoubuy
@@ -44,7 +44,7 @@
         </div>
         <div class="row" style="margin-top: 40px;">
             <div class="col-xl-6"><button class="btn btn-primary btn-lg" type="button" style="width: 100%;">Buchen</button></div>
-            <div class="col"><button class="btn btn-primary btn-lg" type="button" style="width: 100%;">Bewerten</button></div>
+            <div class="col"><button id="jumptoratingbutton" class="btn btn-primary btn-lg" type="button" style="width: 100%;">Bewerten</button></div>
         </div>
     </section>
     <section class="secondarysection">
@@ -65,7 +65,7 @@
     <section class="secondarysection">
         <%String[][] ratingcards = (String[][])request.getAttribute("ratingcards");%>
         <%for(int i = 0; i < ratingcards.length; i++){%>
-            <div class="card">    
+            <div class="card">
                 <div class="card-body">
                     <h4 class="card-title"><%=ratingcards[i][0]%></h4>
                     <p class="card-text"><%=ratingcards[i][1]%></p>
@@ -78,7 +78,7 @@
             </div>
         <% } %>
     </section>
-    <section style="background-color: #ffffff;margin: 30px;padding: 20px;">
+    <section id="ratingsection" style="background-color: #ffffff;margin: 30px;padding: 20px;">
         <div class="row">
             <div class="col">
                 <h1>Bewerten</h1>
@@ -107,6 +107,7 @@
     </section>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/infopage.js"></script>
 </body>
 
 </html>

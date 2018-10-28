@@ -35,8 +35,13 @@ public class InfoPage extends HttpServlet {
         InfoPageDataBaseHelper dbHelper = new InfoPageDataBaseHelper();
         
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            int hotelID = Integer.parseInt(request.getParameter("hotelID"));
+            int hotelID;
+            if(request.getParameter("hotelID") != null){
+                hotelID = Integer.parseInt(request.getParameter("hotelID"));
+            }else{
+                hotelID = 1; // ändern
+            }
+              // preis nicht vergessen !!!!!!!!!!
             request.setAttribute("hotelname", dbHelper.getHotelNameFromDB(hotelID));
             request.setAttribute("mainpicture", dbHelper.getMainImageFromDB(hotelID));
             request.setAttribute("rating", dbHelper.getMainRatingFromDB(hotelID));
