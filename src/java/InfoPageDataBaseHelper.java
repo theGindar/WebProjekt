@@ -19,7 +19,7 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
     protected String getHotelNameFromDB(int hotelID){
         if(!dev){
             String query = "SELECT Name FROM ROOT.Hotel WHERE HotelID =" + String.valueOf(hotelID);
-            ResultSet rs = this.connectToDB(query);
+            ResultSet rs = this.readFromDB(query);
 
             try {
                 rs.next();

@@ -3,6 +3,7 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,19 +16,29 @@ import java.sql.ResultSet;
  * @author Patrick Guenther
  */
 public class DataBaseHelper {
-    protected ResultSet connectToDB(String query){
-        //File dataBase = new File("../../database/HotelDataBase");
+    protected ResultSet readFromDB(String query){
         try{
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
             Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
-            java.sql.Statement dbStatement = connection.createStatement();
+            Statement dbStatement = connection.createStatement();
             ResultSet rs = dbStatement.executeQuery(query);
-            System.out.println("success");
-            
+            System.out.println("successfully connected!"); 
             return rs;
         }catch(Exception e){
-            System.out.println("fail...." + e);
+            System.out.println("failed connecting to database... " + e);
             return null;
+        }
+    }
+    protected void writeToDB(String query){
+        try{
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+            Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
+            Statement dbStatement = connection.createStatement();     
+            dbStatement.executeUpdate(query);
+            System.out.println("successfully connected!");   
+        }catch(Exception e){
+            System.out.println("failed connecting to database... " + e);
+            
         }
     }
 }

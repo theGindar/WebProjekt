@@ -44,7 +44,7 @@
                 <% } %>
                 <% for(int i = 0; i < (5-rating); i++){ %>
                     <div class="col offset-1"><img src="assets/img/ratingicon_placeholder.png" class="ratingicon"></div>
-                <% } %> 
+                <% } %>
         </div>
         <div class="row" style="margin-top: 40px;">
             <div class="col-xl-6"><button class="btn btn-primary btn-lg" type="button" style="width: 100%;">Buchen</button></div>
@@ -110,12 +110,13 @@
                 <output id="range_display" class="d-inline" style="font-size: 50px;">1x</output><img src="assets/img/ratingicon.png" style="width: 50px;"></div>
         </div>
         <div class="row">
-            <div class="col" style="margin-top: 20px;"><button class="btn btn-primary btn-lg" type="submit">Button</button></div>
+            <div class="col" style="margin-top: 20px;"><button id="submit_rating_button" class="btn btn-primary btn-lg" type="submit">Button</button></div>
         </div>
     </section>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/infopage.js"></script>
+    <script src="assets/js/infopage_animations.js"></script>
+    <script src="assets/js/infopage_logic.js"></script>
 </body>
 
 </html>

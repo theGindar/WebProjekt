@@ -6,7 +6,6 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Patrick Guenther
  */
-@WebServlet(urlPatterns = {"/InfoPage"})
-public class InfoPage extends HttpServlet {
+@WebServlet(urlPatterns = {"/SubmitRating"})
+public class SubmitRatingController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,27 +29,11 @@ public class InfoPage extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {        
-        response.setContentType("text/html;charset=UTF-8");
-        InfoPageDataBaseHelper dbHelper = new InfoPageDataBaseHelper();
+            throws ServletException, IOException {
         
-        try (PrintWriter out = response.getWriter()) {
-            int hotelID;
-            if(request.getParameter("hotelID") != null){
-                hotelID = Integer.parseInt(request.getParameter("hotelID"));
-            }else{
-                hotelID = 1; // ändern
-            }
-              // preis nicht vergessen !!!!!!!!!!
-            request.setAttribute("hotelname", dbHelper.getHotelNameFromDB(hotelID));
-            request.setAttribute("mainpicture", dbHelper.getMainImageFromDB(hotelID));
-            request.setAttribute("rating", dbHelper.getMainRatingFromDB(hotelID));
-            request.setAttribute("infocards", dbHelper.getInfoCardsFromDB(hotelID));
-            request.setAttribute("ratingcards", dbHelper.getRatingCardsFromDB(hotelID));
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/InfoPage.jsp");
-            dispatcher.forward(request, response);
-        }
+        
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -77,6 +60,12 @@ public class InfoPage extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String hotelID = String.valueOf(request.getParameter("hotelID"));
+        String heading = String.valueOf(request.getParameter("heading"));
+        String comment = String.valueOf(request.getParameter("comment"));
+        String rating = String.valueOf(request.getParameter("rating"));
+        SubmitRatingDataBaseHelper dbHelper = new SubmitRatingDataBaseHelper();
+        dbHelper.writeRatingToDB(hotelID, heading, comment, rating);
         processRequest(request, response);
     }
 
@@ -87,7 +76,7 @@ public class InfoPage extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "This servlet displays information of one hotel";
+        return "Short description";
     }// </editor-fold>
 
 }
