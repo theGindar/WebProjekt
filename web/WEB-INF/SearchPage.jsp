@@ -10,11 +10,12 @@
         <title>Unterkunftsuche</title>
 
         <!-- Bootstrap-Einbindung -->
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/searchPageStyles.css">
     </head>
 
     <body>
-        <div class="container-fluid bg-light p-3 mb-5">
+        <div class="container-fluid p-3 mb-5 header">
             <form action="" method="POST">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-2 pt-3">

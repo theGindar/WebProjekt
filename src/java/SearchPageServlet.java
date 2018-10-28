@@ -40,11 +40,6 @@ public class SearchPageServlet extends HttpServlet {
         // der Seite zu generieren
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/SearchPage.jsp");
         dispatcher.forward(request, response);
-
-        // Werte im Session Kontext entfernen, damit wir beim nächsten mal
-        // wieder von vorne anfangen
-        //HttpSession session = request.getSession();
-        //session.removeAttribute("vorname");
     }
 
     @Override
