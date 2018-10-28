@@ -30,24 +30,23 @@ public class InfoPage extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException {        
         response.setContentType("text/html;charset=UTF-8");
+        InfoPageDataBaseHelper dbHelper = new InfoPageDataBaseHelper();
+        
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            request.setAttribute("hotelname", "TESTHOTEL1");
-            request.setAttribute("mainpicture", "hotel" );
-            request.setAttribute("rating", 3);
-            String[][] infocardarray = new String[][]{
-                {"hotelbsppic", "lorem ipsum1"},
-                {"hotelbsppic", "lorem ipsum2"}
-            };
-            request.setAttribute("infocards", infocardarray);
-            String[][] ratingcardarray = new String[][]{
-                {"titel1", "asasdkfjadöfkj","3"},
-                {"titel2", "tgbfggbefbe", "2"},
-                {"titel3", "zuikzuktujkt", "5"}
-            };
-            request.setAttribute("ratingcards", ratingcardarray);
+            int hotelID;
+            if(request.getParameter("hotelID") != null){
+                hotelID = Integer.parseInt(request.getParameter("hotelID"));
+            }else{
+                hotelID = 1; // ändern
+            }
+              // preis nicht vergessen !!!!!!!!!!
+            request.setAttribute("hotelname", dbHelper.getHotelNameFromDB(hotelID));
+            request.setAttribute("mainpicture", dbHelper.getMainImageFromDB(hotelID));
+            request.setAttribute("rating", dbHelper.getMainRatingFromDB(hotelID));
+            request.setAttribute("infocards", dbHelper.getInfoCardsFromDB(hotelID));
+            request.setAttribute("ratingcards", dbHelper.getRatingCardsFromDB(hotelID));
             RequestDispatcher dispatcher = request.getRequestDispatcher("InfoPage.jsp");
             dispatcher.forward(request, response);
         }
@@ -88,7 +87,7 @@ public class InfoPage extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "This servlet displays information of a hotel";
     }// </editor-fold>
 
 }

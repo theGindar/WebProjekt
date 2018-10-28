@@ -15,17 +15,19 @@ import java.sql.ResultSet;
  * @author Patrick Guenther
  */
 public class DataBaseHelper {
-    public ResultSet connectToDB(String statement){
-        File dataBase = new File("../../database/HotelDataBase");
+    protected ResultSet connectToDB(String query){
+        //File dataBase = new File("../../database/HotelDataBase");
         try{
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-            Connection connection = DriverManager.getConnection("jdbc:derby:"+dataBase.getCanonicalPath(), "root", "1234");
+            Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
             java.sql.Statement dbStatement = connection.createStatement();
-            ResultSet rs = dbStatement.executeQuery(statement);
+            ResultSet rs = dbStatement.executeQuery(query);
+            System.out.println("success");
+            
             return rs;
         }catch(Exception e){
+            System.out.println("fail...." + e);
             return null;
         }
-        
     }
 }

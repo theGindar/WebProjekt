@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : InfoPage
     Created on : Oct 26, 2018, 12:50:57 PM
     Author     : trybeforeyoubuy
@@ -38,13 +38,17 @@
             </div>
         </div>
         <div class="row justify-content-center align-items-center align-content-center" id="ratingrow">
-                <% for(int i = 0; i < Integer.parseInt(request.getAttribute("rating").toString()); i++){ %>
-                            <div class="col offset-1"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
+                <%int rating = Integer.parseInt(request.getAttribute("rating").toString());%>
+                <% for(int i = 0; i < rating; i++){ %>
+                    <div class="col offset-1"><img src="assets/img/ratingicon.png" class="ratingicon"></div>
                 <% } %>
+                <% for(int i = 0; i < (5-rating); i++){ %>
+                    <div class="col offset-1"><img src="assets/img/ratingicon_placeholder.png" class="ratingicon"></div>
+                <% } %> 
         </div>
         <div class="row" style="margin-top: 40px;">
             <div class="col-xl-6"><button class="btn btn-primary btn-lg" type="button" style="width: 100%;">Buchen</button></div>
-            <div class="col"><button class="btn btn-primary btn-lg" type="button" style="width: 100%;">Bewerten</button></div>
+            <div class="col"><button id="jumptoratingbutton" class="btn btn-primary btn-lg" type="button" style="width: 100%;">Bewerten</button></div>
         </div>
     </section>
     <section class="secondarysection">
@@ -65,20 +69,24 @@
     <section class="secondarysection">
         <%String[][] ratingcards = (String[][])request.getAttribute("ratingcards");%>
         <%for(int i = 0; i < ratingcards.length; i++){%>
-            <div class="card">    
+            <div class="card">
                 <div class="card-body">
                     <h4 class="card-title"><%=ratingcards[i][0]%></h4>
                     <p class="card-text"><%=ratingcards[i][1]%></p>
                     <div class="row no-gutters align-content-center smallratingrow">
-                        <%for(int j = 0; j < Integer.parseInt(ratingcards[i][2]); j++){%>
+                        <%int commentrating = Integer.parseInt(ratingcards[i][2]);%>
+                        <%for(int j = 0; j < commentrating; j++){%>
                             <div class="col offset-1"><img src="assets/img/ratingicon.png" class="smallratingicon"></div>
+                        <% } %>
+                        <%for(int j = 0; j < (5-commentrating); j++){%>
+                            <div class="col offset-1"><img src="assets/img/ratingicon_placeholder.png" class="smallratingicon"></div>
                         <% } %>
                     </div>
                 </div>
             </div>
         <% } %>
     </section>
-    <section style="background-color: #ffffff;margin: 30px;padding: 20px;">
+    <section id="ratingsection" style="background-color: #ffffff;margin: 30px;padding: 20px;">
         <div class="row">
             <div class="col">
                 <h1>Bewerten</h1>
@@ -95,11 +103,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col" style="margin-top: 20px;"><input type="range" value="1" min="1" max="5"></div>
+            <div class="col" style="margin-top: 20px;"><input id="rating_range" type="range" value="1" min="1" max="5" oninput="range_display.value = rating_range.value + 'x'"></div>
         </div>
         <div class="row">
             <div class="col">
-                <p class="d-inline" style="font-size: 50px;">0</p><img src="assets/img/ratingicon.png" style="width: 50px;"></div>
+                <output id="range_display" class="d-inline" style="font-size: 50px;">1x</output><img src="assets/img/ratingicon.png" style="width: 50px;"></div>
         </div>
         <div class="row">
             <div class="col" style="margin-top: 20px;"><button class="btn btn-primary btn-lg" type="submit">Button</button></div>
@@ -107,6 +115,7 @@
     </section>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/infopage.js"></script>
 </body>
 
 </html>
