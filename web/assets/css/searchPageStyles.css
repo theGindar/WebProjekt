@@ -9,3 +9,11 @@
 body {
     background-color: #dbecff;
 }
+
+.container-top {
+    margin-top: 55.6px;
+}
+
+.middle-div {
+    width:100%;
+}

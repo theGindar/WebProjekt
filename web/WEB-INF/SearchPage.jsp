@@ -15,8 +15,13 @@
     </head>
 
     <body>
-        <div class="container-fluid p-3 mb-5 header">
-            <form action="" method="POST">
+        <nav class="navbar fixed-top header">
+            <div class="middle-div">
+                <h1 class="text-center">Unterkunftsuche</h1>
+            </div>
+        </nav>
+        <div class="container-fluid p-3 mb-5 container-top">
+            <form method="POST">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-2 pt-3">
                         <div class="form-group ">
