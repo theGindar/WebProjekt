@@ -17,7 +17,7 @@
     <body>
         <nav class="navbar fixed-top header">
             <div class="middle-header-div">
-                <h1 class="text-center">Unterkunftsuche</h1>
+                <h1 class="header-title">Unterkunftsuche</h1>
             </div>
         </nav>
         <div class="container-fluid p-3 mb-5 container-top">
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary btn-block">Search</button>
+                        <button type="submit" class="btn btn-primary btn-block searchbutton">Search</button>
                     </div>
                 </div>
             </form>
