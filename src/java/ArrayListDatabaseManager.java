@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class ArrayListDatabaseManager {
 
     private static ArrayList<Unterkunft> unterkuenfte = new ArrayList<>();
-    private static int lastID = 0;
+    private static int lastID = -1;
     
     public ArrayListDatabaseManager(){
         addUnterkunft(new Unterkunft("Vollpension", 40, "cool", 3, "Hotel am Graben", "Grabenstadt", "Hotel"));

@@ -125,7 +125,7 @@
                                 <p>
                                     Bewertung: ${unterkunft.getBewertung()}/5 Sterne
                                 </p>
-                                <form action="/WebProjekt/InfoPage" method="post">
+                                <form action="/WebProjekt/BookingPage" method="post">
                                     <button type="submit" name="hotelId" value=${unterkunft.getId()} class="btn btn-primary card-button">Buchen</button>
                                 </form>
                                 <form action="/WebProjekt/InfoPage" method="post">
