@@ -24,10 +24,11 @@ public class SearchPageServlet extends HttpServlet {
         List<String> unterkunftKategorien = this.getUnterkunftKategorien();
         List<String> budgetKategorien = this.getBudgetKategorien();
 
-        String chosenStadtKategorie = request.getParameter("chosenStadtKategorie");
-        String chosenUnterkunftKategorie = request.getParameter("chosenUnterkunftKategorie");
-        //int chosenBudgetKategorie = Integer.parseInt(request.getParameter("chosenBudgetKategorie"));
-        int chosenBudgetKategorie = 20;
+        HttpSession session = request.getSession();
+        
+        String chosenStadtKategorie = (String) session.getAttribute("chosenStadtKategorie");
+        String chosenUnterkunftKategorie = (String) session.getAttribute("chosenUnterkunftKategorie");
+        String chosenBudgetKategorie = (String) session.getAttribute("chosenBudgetKategorie");
         
         List<Unterkunft> unterkuenfte = this.getUnterkuenfte(chosenStadtKategorie, chosenUnterkunftKategorie, chosenBudgetKategorie);
 
@@ -96,7 +97,7 @@ public class SearchPageServlet extends HttpServlet {
         return budgetKategorien;
     }
 
-    private ArrayList<Unterkunft> getUnterkuenfte(String chosenStadtKategorie, String chosenUnterkunftKategorie, int chosenBudgetKategorie) {
-        return dbManager.getAllUnterkuenfte();
+    private ArrayList<Unterkunft> getUnterkuenfte(String chosenStadtKategorie, String chosenUnterkunftKategorie, String chosenBudgetKategorie) {
+        return dbManager.getFilteredUnterkuenfte(chosenStadtKategorie, chosenUnterkunftKategorie, chosenBudgetKategorie);
     }
 }

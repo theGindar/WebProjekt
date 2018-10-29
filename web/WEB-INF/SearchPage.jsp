@@ -26,81 +26,51 @@
                     <div class="col-md-2 pt-3">
                         <div class="form-group ">
                             <select name="chosenStadtKategorie" id="inputState" class="form-control">
-                                <c:choose>  
-                                    <c:when test="${chosenStadtKategorie == null}">  
-                                        <option selected>Stadt</option>
-                                        <c:forEach items="${stadtKategorien}" var="stadtKategorie">
+                                <option>Stadt</option>
+                                <c:forEach items="${stadtKategorien}" var="stadtKategorie">
+                                    <c:choose>  
+                                        <c:when test="${stadtKategorie == chosenStadtKategorie}">  
+                                            <option selected>${stadtKategorie}</option>
+                                        </c:when>
+                                        <c:otherwise>
                                             <option>${stadtKategorie}</option>
-                                        </c:forEach>
-                                    </c:when>
-                                    <c:otherwise>  
-                                        <option>Stadt</option>
-                                        <c:forEach items="${stadtKategorien}" var="stadtKategorie">
-                                            <c:choose>  
-                                                <c:when test="${stadtKategorie == chosenStadtKategorie}">  
-                                                    <option selected>${stadtKategorie}</option>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <option>${stadtKategorie}</option>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </c:forEach>  
-                                    </c:otherwise>  
-                                </c:choose>  
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach> 
                             </select>
                         </div>
                     </div>
                     <div class="col-md-2 pt-3">
                         <div class="form-group">
                             <select name="chosenUnterkunftKategorie" id="inputState" class="form-control">
-                                <c:choose>  
-                                    <c:when test="${chosenUnterkunftKategorie == null}">  
-                                        <option selected>Unterkunft</option>
-                                        <c:forEach items="${unterkunftKategorien}" var="unterkunftKategorie">
+                                <option>Unterkunft</option>
+                                <c:forEach items="${unterkunftKategorien}" var="unterkunftKategorie">
+                                    <c:choose>  
+                                        <c:when test="${unterkunftKategorie == chosenUnterkunftKategorie}">  
+                                            <option selected>${unterkunftKategorie}</option>
+                                        </c:when>
+                                        <c:otherwise>
                                             <option>${unterkunftKategorie}</option>
-                                        </c:forEach>
-                                    </c:when>
-                                    <c:otherwise>  
-                                        <option>Unterkunft</option>
-                                        <c:forEach items="${unterkunftKategorien}" var="unterkunftKategorie">
-                                            <c:choose>  
-                                                <c:when test="${unterkunftKategorie == chosenUnterkunftKategorie}">  
-                                                    <option selected>${unterkunftKategorie}</option>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <option>${unterkunftKategorie}</option>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </c:forEach>  
-                                    </c:otherwise>  
-                                </c:choose>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-2 pt-3">
                         <div class="form-group">
-                            <select name="chosenBudgetKategorie" id="inputState" class="form-control">
-                                <c:choose>  
-                                    <c:when test="${chosenBudgetKategorie == null}">  
-                                        <option selected>Budget</option>
-                                        <c:forEach items="${budgetKategorien}" var="budgetKategorie">
+                            <select name="chosenBudgetKategorie" id="inputState" class="form-control">  
+                                <option>Budget</option>
+                                <c:forEach items="${budgetKategorien}" var="budgetKategorie">
+                                    <c:choose>  
+                                        <c:when test="${budgetKategorie == chosenBudgetKategorie}">  
+                                            <option selected value="${budgetKategorie}">&lt;${budgetKategorie}€</option>
+                                        </c:when>
+                                        <c:otherwise>
                                             <option value="${budgetKategorie}">&lt;${budgetKategorie}€</option>
-                                        </c:forEach>
-                                    </c:when>
-                                    <c:otherwise>  
-                                        <option>Budget</option>
-                                        <c:forEach items="${budgetKategorien}" var="budgetKategorie">
-                                            <c:choose>  
-                                                <c:when test="${budgetKategorie == chosenBudgetKategorie}">  
-                                                    <option selected value="${budgetKategorie}">&lt;${budgetKategorie}€</option>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <option value="${budgetKategorie}">&lt;${budgetKategorie}€</option>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </c:forEach>  
-                                    </c:otherwise>  
-                                </c:choose>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
                             </select>
                         </div>
                     </div>
