@@ -24,3 +24,9 @@ body {
     text-align: center;
     color: white;
 }
+
+.card-button {
+    background-color: #8888ff;
+    border-color: #8888ff;
+    margin: 4px;
+}

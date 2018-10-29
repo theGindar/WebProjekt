@@ -122,9 +122,15 @@
                                 <p>
                                     ${unterkunft.getBeschreibung()}
                                 </p>
-                                <footer>
+                                <p>
                                     Bewertung: ${unterkunft.getBewertung()}/5 Sterne
-                                </footer>
+                                </p>
+                                <form action="/WebProjekt/InfoPage" method="post">
+                                    <button type="submit" name="hotelId" value=${unterkunft.getId()} class="btn btn-primary card-button">Buchen</button>
+                                </form>
+                                <form action="/WebProjekt/InfoPage" method="post">
+                                    <button type="submit" name="hotelId" value=${unterkunft.getId()} class="btn btn-primary card-button">Details</button>
+                                </form>                           
                             </div>
                         </div>
                     </div>

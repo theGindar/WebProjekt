@@ -37,6 +37,10 @@ public class Unterkunft {
         return copyUnterkunft;
     }
     
+    public int getId(){
+        return this.id;
+    }
+    
     public String getAngebotName(){
         return this.angebotName;
     }
