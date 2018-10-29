@@ -29,7 +29,7 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
                 return null;
             }
         }else{
-            return "TestHotel1";
+           return "testheading";
         }
     }
     protected int getMainRatingFromDB(int hotelID){

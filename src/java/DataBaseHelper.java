@@ -19,7 +19,8 @@ public class DataBaseHelper {
     protected ResultSet readFromDB(String query){
         try{
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-            Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
+            //Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
+            Connection connection = DriverManager.getConnection("jdbc:derby:hoteldb;create=true");
             Statement dbStatement = connection.createStatement();
             ResultSet rs = dbStatement.executeQuery(query);
             System.out.println("successfully connected!"); 
@@ -32,7 +33,8 @@ public class DataBaseHelper {
     protected void writeToDB(String query){
         try{
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-            Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
+            //Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
+            Connection connection = DriverManager.getConnection("jdbc:derby:hoteldb;create=true");
             Statement dbStatement = connection.createStatement();     
             dbStatement.executeUpdate(query);
             System.out.println("successfully connected!");   
