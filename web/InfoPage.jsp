@@ -94,8 +94,10 @@
         </div>
         <div class="row">
             <div class="col">
-                <h2 class="commentdescription">Titel:</h2><input type="text" maxlength="2000" style="background-size: auto;width: 100%;height: 50hv;">
-                <h2 class="commentdescription">Text:</h2><textarea style="width: 100%;"></textarea></div>
+                <h2 class="commentdescription">Titel:</h2>
+                <input type="text" id="heading_input" maxlength="200" style="background-size: auto;width: 100%;height: 50hv;">
+                <h2 class="commentdescription">Text:</h2>
+                <textarea id="comment_input" style="width: 100%;"></textarea></div>
         </div>
         <div class="row">
             <div class="col">
