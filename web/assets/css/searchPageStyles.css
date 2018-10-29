@@ -1,9 +1,11 @@
 .header {
     background-color: #8888ff;
+    height: 56px;
 }
 
 .searchbutton{
-    background-color: #9955ff;
+    background-color: #8888ff;
+    border-color: #8888ff;
 }
 
 body {
@@ -14,6 +16,11 @@ body {
     margin-top: 55.6px;
 }
 
-.middle-div {
+.middle-header-div {
     width:100%;
+}
+
+.header-title {
+    text-align: center;
+    color: white;
 }

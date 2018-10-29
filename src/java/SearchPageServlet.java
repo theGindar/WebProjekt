@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
     "",
     "/SearchPage"})
 public class SearchPageServlet extends HttpServlet {
+    private ArrayListDatabaseManager dbManager = new ArrayListDatabaseManager();
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -96,13 +97,6 @@ public class SearchPageServlet extends HttpServlet {
     }
 
     private ArrayList<Unterkunft> getUnterkuenfte(String chosenStadtKategorie, String chosenUnterkunftKategorie, int chosenBudgetKategorie) {
-        ArrayList<Unterkunft> unterkuenfte = new ArrayList();
-
-        unterkuenfte.add(new Unterkunft("Vollpension", chosenBudgetKategorie, "cool", 3, "Hotel am Graben", chosenStadtKategorie, chosenUnterkunftKategorie));
-        unterkuenfte.add(new Unterkunft("Vollpension", 30, "cool", 3, "Hotel am Graben", "Grabenstadt", "Hotel"));
-        unterkuenfte.add(new Unterkunft("Halbpension", 20, "sehr cool", 4, "Herberge am Graben", "Grabenstadt", "Herberge"));
-        unterkuenfte.add(new Unterkunft("Vollpension", 50, "cool", 5, "Luxushotel für Schluffis", "Schluffistadt", "Hotel"));
-
-        return unterkuenfte;
+        return dbManager.getAllUnterkuenfte();
     }
 }

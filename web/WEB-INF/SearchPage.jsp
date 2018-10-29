@@ -16,8 +16,8 @@
 
     <body>
         <nav class="navbar fixed-top header">
-            <div class="middle-div">
-                <h1 class="text-center">Unterkunftsuche</h1>
+            <div class="middle-header-div">
+                <h1 class="header-title">Unterkunftsuche</h1>
             </div>
         </nav>
         <div class="container-fluid p-3 mb-5 container-top">
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary btn-block">Search</button>
+                        <button type="submit" class="btn btn-primary btn-block searchbutton">Search</button>
                     </div>
                 </div>
             </form>
@@ -113,17 +113,17 @@
 
         <div class="container-fluid">
             <div class="row">
-                <c:forEach items="${stadtKategorien}" var="unterkunft">
+                <c:forEach items="${unterkuenfte}" var="unterkunft">
                     <div class="col-md-12">
                         <div class="card my-3 mx-md-5 bg-light">
                             <div class="card-body">
-                                <img class="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF7WtLzw4tyyOXKlgTYC1fDu4NTMyz3z1FDgtVMdXzuuJfFy6e0g" alt="Hotel 1" />
-                                <h2>${unterkunft}:</h2>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF7WtLzw4tyyOXKlgTYC1fDu4NTMyz3z1FDgtVMdXzuuJfFy6e0g" alt="Hotel 1" />
+                                <h2>${unterkunft.getName()}:</h2>
                                 <p>
-                                    ${unterkunft}
+                                    ${unterkunft.getBeschreibung()}
                                 </p>
                                 <footer>
-                                    Bewertung: ${unterkunft}/5 Sterne
+                                    Bewertung: ${unterkunft.getBewertung()}/5 Sterne
                                 </footer>
                             </div>
                         </div>
