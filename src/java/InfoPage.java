@@ -47,7 +47,7 @@ public class InfoPage extends HttpServlet {
             request.setAttribute("rating", dbHelper.getMainRatingFromDB(hotelID));
             request.setAttribute("infocards", dbHelper.getInfoCardsFromDB(hotelID));
             request.setAttribute("ratingcards", dbHelper.getRatingCardsFromDB(hotelID));
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/InfoPage.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/InfoPage.jsp");
             dispatcher.forward(request, response);
         }
     }
