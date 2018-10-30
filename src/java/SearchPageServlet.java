@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
     "",
     "/SearchPage"})
 public class SearchPageServlet extends HttpServlet {
+    private ArrayListDatabaseManager dbManager = new ArrayListDatabaseManager();
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -23,10 +24,11 @@ public class SearchPageServlet extends HttpServlet {
         List<String> unterkunftKategorien = this.getUnterkunftKategorien();
         List<String> budgetKategorien = this.getBudgetKategorien();
 
-        String chosenStadtKategorie = request.getParameter("chosenStadtKategorie");
-        String chosenUnterkunftKategorie = request.getParameter("chosenUnterkunftKategorie");
-        //int chosenBudgetKategorie = Integer.parseInt(request.getParameter("chosenBudgetKategorie"));
-        int chosenBudgetKategorie = 20;
+        HttpSession session = request.getSession();
+        
+        String chosenStadtKategorie = (String) session.getAttribute("chosenStadtKategorie");
+        String chosenUnterkunftKategorie = (String) session.getAttribute("chosenUnterkunftKategorie");
+        String chosenBudgetKategorie = (String) session.getAttribute("chosenBudgetKategorie");
         
         List<Unterkunft> unterkuenfte = this.getUnterkuenfte(chosenStadtKategorie, chosenUnterkunftKategorie, chosenBudgetKategorie);
 
@@ -95,14 +97,7 @@ public class SearchPageServlet extends HttpServlet {
         return budgetKategorien;
     }
 
-    private ArrayList<Unterkunft> getUnterkuenfte(String chosenStadtKategorie, String chosenUnterkunftKategorie, int chosenBudgetKategorie) {
-        ArrayList<Unterkunft> unterkuenfte = new ArrayList();
-
-        unterkuenfte.add(new Unterkunft("Vollpension", chosenBudgetKategorie, "cool", 3, "Hotel am Graben", chosenStadtKategorie, chosenUnterkunftKategorie));
-        unterkuenfte.add(new Unterkunft("Vollpension", 30, "cool", 3, "Hotel am Graben", "Grabenstadt", "Hotel"));
-        unterkuenfte.add(new Unterkunft("Halbpension", 20, "sehr cool", 4, "Herberge am Graben", "Grabenstadt", "Herberge"));
-        unterkuenfte.add(new Unterkunft("Vollpension", 50, "cool", 5, "Luxushotel für Schluffis", "Schluffistadt", "Hotel"));
-
-        return unterkuenfte;
+    private ArrayList<Unterkunft> getUnterkuenfte(String chosenStadtKategorie, String chosenUnterkunftKategorie, String chosenBudgetKategorie) {
+        return dbManager.getFilteredUnterkuenfte(chosenStadtKategorie, chosenUnterkunftKategorie, chosenBudgetKategorie);
     }
 }

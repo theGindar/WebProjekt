@@ -16,7 +16,7 @@ public class SubmitRatingDataBaseHelper extends DataBaseHelper{
         String saveRating = String.valueOf(rating);
         String commentID = "1";
           
-        String query = "INSERT INTO ROOT.comments (hotelID, comment, rating, heading, commentID) VALUES (" + saveHotelID + ", '"+ saveComment + "', " + saveRating + ", '" + saveHeading + "', " + "1" + ")";
+        String query = "INSERT INTO ROOT.comments(hotelID, heading, comment, rating) VALUES (" + saveHotelID + ", '"+ saveHeading + "', '" + saveComment + "', " + saveRating + ")";
         System.out.println("QUERY: " + query);
         this.writeToDB(query);
     }

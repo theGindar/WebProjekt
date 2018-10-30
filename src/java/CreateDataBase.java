@@ -6,7 +6,11 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Patrick Guenther
+ * @author Patrick Günther
  */
-@WebServlet(urlPatterns = {"/InfoPage"})
-public class InfoPage extends HttpServlet {
+@WebServlet(urlPatterns = {"/CreateDataBase"})
+public class CreateDataBase extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,28 +33,36 @@ public class InfoPage extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    public static final String DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
+    public static final String JDBC_URL = "jdbc:derby:hoteldb;create=true";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {        
-        response.setContentType("text/html;charset=UTF-8");
-        InfoPageDataBaseHelper dbHelper = new InfoPageDataBaseHelper();
-        
-        try (PrintWriter out = response.getWriter()) {
-            int hotelID;
-            if(request.getParameter("hotelID") != null){
-                hotelID = Integer.parseInt(request.getParameter("hotelID"));
-            }else{
-                hotelID = 1; // ändern
-            }
-              // preis nicht vergessen !!!!!!!!!!
-            request.setAttribute("hotelname", dbHelper.getHotelNameFromDB(hotelID));
-            request.setAttribute("mainpicture", dbHelper.getMainImageFromDB(hotelID));
-            request.setAttribute("rating", dbHelper.getMainRatingFromDB(hotelID));
-            request.setAttribute("infocards", dbHelper.getInfoCardsFromDB(hotelID));
-            request.setAttribute("ratingcards", dbHelper.getRatingCardsFromDB(hotelID));
-            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/InfoPage.jsp");
-            dispatcher.forward(request, response);
+            throws ServletException, IOException {
+        try {
+            createDB();
+        } catch (Exception ex) {
+            System.out.println("DATABASE COULD NOT BE CREATED: " + ex);
         }
+        
+        
+        
+        
     }
+    protected void createDB() throws Exception{
+        Class.forName(DRIVER);
+        Connection connection = DriverManager.getConnection(JDBC_URL);
+        try{
+            connection.createStatement().execute(
+                "CREATE TABLE comments(commentID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), hotelID INTEGER NOT NULL, heading VARCHAR(200) NOT NULL, comment VARCHAR(2000) NOT NULL, rating INTEGER NOT NULL, CONSTRAINT primary_key PRIMARY KEY (commentID))"
+                );
+        }catch(Exception ex){
+            System.out.println(ex);
+        }
+        connection.createStatement().execute(
+                "CREATE TABLE hotel(hotelID INTEGER PRIMARY KEY, rating INTEGER, mainimg VARCHAR(50), price DOUBLE, description VARCHAR(2000), name VARCHAR(100))"
+        );
+        System.out.println("Database created!");
+    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -87,7 +99,7 @@ public class InfoPage extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "This servlet displays information of one hotel";
+        return "Short description";
     }// </editor-fold>
 
 }
