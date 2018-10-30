@@ -51,16 +51,29 @@ public class CreateDataBase extends HttpServlet {
         Class.forName(DRIVER);
         Connection connection = DriverManager.getConnection(JDBC_URL);
         try{
-            connection.createStatement().execute(
+            connection.createStatement().execute( //Tabelle comments 
                 "CREATE TABLE comments(commentID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), hotelID INTEGER NOT NULL, heading VARCHAR(200) NOT NULL, comment VARCHAR(2000) NOT NULL, rating INTEGER NOT NULL, CONSTRAINT primary_key PRIMARY KEY (commentID))"
-                );
+            );
+            System.out.println("Database hotel created!");
         }catch(Exception ex){
-            System.out.println(ex);
+            System.out.println("Database comments not created: " + ex);
         }
-        connection.createStatement().execute(
-                "CREATE TABLE hotel(hotelID INTEGER PRIMARY KEY, rating INTEGER, mainimg VARCHAR(50), price DOUBLE, description VARCHAR(2000), name VARCHAR(100))"
-        );
-        System.out.println("Database created!");
+        try{
+            connection.createStatement().execute( //Tabelle hotel
+                    "CREATE TABLE hotel(hotelID INTEGER PRIMARY KEY, rating INTEGER, mainimg VARCHAR(50), price DOUBLE, description VARCHAR(2000), name VARCHAR(100))"
+            );
+            System.out.println("Database hotel created!");
+        }catch(Exception ex){
+            System.out.println("Database hotel not created: " + ex);
+        }
+        try{
+            connection.createStatement().execute( //Tabelle hotel
+                    "CREATE TABLE infocards(infocardID INTEGER PRIMARY KEY, hotelID INTEGER, imgpath VARCHAR(50), text VARCHAR(2000))"
+            );
+            System.out.println("Database infocards created!");
+        }catch(Exception ex){
+            System.out.println("Database infocards not created: " + ex);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
