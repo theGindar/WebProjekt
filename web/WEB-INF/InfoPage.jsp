@@ -48,13 +48,13 @@
         </div>
         <div class="row" style="margin-top: 40px;">
             <div class="col-xl-6"><button class="btn btn-primary btn-lg" type="button" style="width: 100%;">Buchen</button></div>
-            <div class="col"><button id="jumptoratingbutton" class="btn btn-primary btn-lg" type="button" style="width: 100%;">Bewerten</button></div>
+            <div class="col-xl-6"><button id="jumptoratingbutton" class="btn btn-primary btn-lg" type="button" style="width: 100%;">Bewerten</button></div>
         </div>
     </section>
     <section class="secondarysection">
         <%String[][] infocards = (String[][])request.getAttribute("infocards");%>
         <%for(int i = 0; i < infocards.length; i++){%>
-            <div class="card">
+            <div class="card fadein">
                 <div class="card-body">
                     <div class="row infocolumn">
                         <div class="col my-auto"><img class="rounded img-fluid infoimage" src="assets/img/<%=infocards[i][0]%>.jpg"></div>
@@ -69,7 +69,7 @@
     <section class="secondarysection">
         <%String[][] ratingcards = (String[][])request.getAttribute("ratingcards");%>
         <%for(int i = 0; i < ratingcards.length; i++){%>
-            <div class="card">
+            <div class="card fadein">
                 <div class="card-body">
                     <h4 class="card-title"><%=ratingcards[i][0]%></h4>
                     <p class="card-text"><%=ratingcards[i][1]%></p>
@@ -86,7 +86,7 @@
             </div>
         <% } %>
     </section>
-    <section id="ratingsection" style="background-color: #ffffff;margin: 30px;padding: 20px;">
+    <section id="ratingsection" class="fadein" style="background-color: #ffffff;margin: 30px;padding: 20px;">
         <div class="row">
             <div class="col">
                 <h1>Bewerten</h1>

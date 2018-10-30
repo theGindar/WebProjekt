@@ -79,3 +79,11 @@ body {
 .navigationbutton {
 }
 
+.fadein {
+  transition: all 400ms;
+  opacity: 0;
+}
+
+.fade{
+  opacity: 1;
+}
