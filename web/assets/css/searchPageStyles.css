@@ -1,13 +1,3 @@
-.header {
-    background-color: #8888ff;
-    height: 56px;
-}
-
-.searchbutton{
-    background-color: #8888ff;
-    border-color: #8888ff;
-}
-
 body {
     background-color: #dbecff;
 }
@@ -26,7 +16,5 @@ body {
 }
 
 .card-button {
-    background-color: #8888ff;
-    border-color: #8888ff;
     margin: 4px;
 }

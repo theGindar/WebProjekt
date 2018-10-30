@@ -5,15 +5,16 @@
 
 <!DOCTYPE html>
 <template:mainTemplate>
-    <jsp:attribute name="head">
+    <jsp:attribute name="headstart">
         <meta charset="utf-8" />
         <title>Unterkunftsuche</title>
-
-        <!-- Bootstrap-Einbindung -->
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/searchPageStyles.css">
-
     </jsp:attribute>
+        
+    <jsp:attribute name="headend">
+        <link rel="stylesheet" href="assets/css/searchPageStyles.css">
+    </jsp:attribute>
+        
     <jsp:attribute name="body">
         <div class="container-fluid p-3 mb-5 container-top">
             <form method="POST">
@@ -70,7 +71,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary btn-block searchbutton">Search</button>
+                        <button type="submit" class="btn btn-primary btn-block actionbutton">Search</button>
                     </div>
                 </div>
             </form>
@@ -91,10 +92,10 @@
                                     Bewertung: ${unterkunft.getBewertung()}/5 Sterne
                                 </p>
                                 <form action="/WebProjekt/BookingPage" method="post">
-                                    <button type="submit" name="hotelId" value=${unterkunft.getId()} class="btn btn-primary card-button">Buchen</button>
+                                    <button type="submit" name="hotelId" value=${unterkunft.getId()} class="btn btn-primary card-button actionbutton">Buchen</button>
                                 </form>
                                 <form action="/WebProjekt/InfoPage" method="post">
-                                    <button type="submit" name="hotelId" value=${unterkunft.getId()} class="btn btn-primary card-button">Details</button>
+                                    <button type="submit" name="hotelId" value=${unterkunft.getId()} class="btn btn-primary card-button actionbutton">Details</button>
                                 </form>                           
                             </div>
                         </div>
