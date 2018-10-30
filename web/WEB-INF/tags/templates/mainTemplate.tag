@@ -1,13 +1,15 @@
 <%@tag pageEncoding="UTF-8"%>
 
-<%@attribute name="head" fragment="true" %>
+<%@attribute name="headstart" fragment="true" %>
+<%@attribute name="headend" fragment="true" %>
 <%@attribute name="body" fragment="true" %>
 
 <!DOCTYPE html>
 <html>
     <head>
-        
-        <jsp:invoke fragment="head"/>
+        <jsp:invoke fragment="headstart"/>
+        <link rel="stylesheet" href="assets/css/mainTemplateStyles.css" />
+        <jsp:invoke fragment="headend"/>
 
     </head>
     <body>

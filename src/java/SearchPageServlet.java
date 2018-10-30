@@ -26,10 +26,12 @@ public class SearchPageServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         
+        //Attribute aus der Session auslesen
         String chosenStadtKategorie = (String) session.getAttribute("chosenStadtKategorie");
         String chosenUnterkunftKategorie = (String) session.getAttribute("chosenUnterkunftKategorie");
         String chosenBudgetKategorie = (String) session.getAttribute("chosenBudgetKategorie");
         
+        //ausgefilterte Unterkünfte auslesen (intern durch DBmanager)
         List<Unterkunft> unterkuenfte = this.getUnterkuenfte(chosenStadtKategorie, chosenUnterkunftKategorie, chosenBudgetKategorie);
 
         request.setAttribute("stadtKategorien", stadtKategorien);
@@ -38,8 +40,7 @@ public class SearchPageServlet extends HttpServlet {
 
         request.setAttribute("unterkuenfte", unterkuenfte);
 
-        // Anfrage an eine JSP weiterleiten, um damit den HTML-Code
-        // der Seite zu generieren
+        // Anfrage an die JSP weiterleiten, um damit den HTML-Code der Seite zu generieren
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/SearchPage.jsp");
         dispatcher.forward(request, response);
     }
