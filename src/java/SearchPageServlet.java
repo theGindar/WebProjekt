@@ -34,6 +34,7 @@ public class SearchPageServlet extends HttpServlet {
         //ausgefilterte Unterkünfte auslesen (intern durch DBmanager)
         List<Unterkunft> unterkuenfte = this.getUnterkuenfte(chosenStadtKategorie, chosenUnterkunftKategorie, chosenBudgetKategorie);
 
+        //Attribute im Request setzen
         request.setAttribute("stadtKategorien", stadtKategorien);
         request.setAttribute("unterkunftKategorien", unterkunftKategorien);
         request.setAttribute("budgetKategorien", budgetKategorien);

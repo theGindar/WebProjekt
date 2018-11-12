@@ -1,20 +1,38 @@
-body {
-    background-color: #dbecff;
+.card-title-frame {
+    width: 100%;
 }
 
-.container-top {
-    margin-top: 55.6px;
-}
-
-.middle-header-div {
-    width:100%;
-}
-
-.header-title {
+.card-title {
     text-align: center;
-    color: white;
+    margin-left: 5%;
+}
+
+.card-pic-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-pic-frame {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card-picture {
+    width: 10%;
+    border-radius: 4px;
+}
+
+.card-button-frame {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .card-button {
-    margin: 4px;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
