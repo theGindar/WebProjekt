@@ -2,6 +2,7 @@
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,10 +41,10 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
 
             try {
                 rs.next();
-                return rs.getString(1);
+                return Integer.parseInt(rs.getString(1));
             } catch (SQLException ex) {
                 System.out.println(ex);
-                return null;
+                return 0;
             }
         }else{
             return 3;
@@ -66,27 +67,33 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
         }
         
     }
-    protected String[][] getInfoCardsFromDB(int hotelID){
+    protected ArrayList<String[]> getInfoCardsFromDB(int hotelID){
         if(!dev){
             String query = "SELECT text, imgpath FROM hotel WHERE hotelID=" + String.valueOf(hotelID);
             ResultSet rs = this.readFromDB(query);
-            int anzahl = 0;
             try {
-                anzahl++;
+                ArrayList<String[]> resultList = new ArrayList<String[]>();
                 while(rs.next()){
+                    String[] innerArray = new String[2];
                     for(int i = 1; i <=2; i++){
-                        /* int string reinschreiben*/rs.getString(i);
+                        innerArray[i-1] = rs.getString(i);
                     }
+                    resultList.add(innerArray);
                 }
+                return resultList;
+                
             } catch (SQLException ex) {
                 System.out.println(ex);
                 return null;
             }
         }else{
-            String[][] s = new String[][]{
-                {"hotelbsppic", "lorem ipsum1"},
-                {"hotelbsppic", "lorem ipsum2"}};
-            return s;
+            ArrayList<String[]> resultList = new ArrayList<String[]>();
+            for(int i = 0; i<2; i++){
+                String[] array = new String[]{"hotelbsppic","lorem ipsum1"}; 
+                resultList.add(array);
+            }
+            
+            return resultList;
         }
     }
     protected String[][] getRatingCardsFromDB(int hotelID){
