@@ -90,27 +90,38 @@
                                         </div>
                                         <div class="card-pic-container col-10 col-sm-4">
                                             <div class="card-pic-frame">
-                                                <img class="card-picture w-100" src="assets/img/hotel.jpg" alt="Hotel 1" />                               
+                                                <img class="card-picture w-100" src="assets/img/hotelbsppic.jpg" alt="Hotel 1" />                               
                                             </div>
                                         </div>
                                         <div class="card-content-frame col-sm-8">
                                             <div class="col-12">
-                                                <p class="card-text">${unterkunft.getBeschreibung()}</p>
-                                            </div>
-                                            <div class="card-rating-frame col-12">
-                                                <p class="card-text">Bewertung: ${unterkunft.getBewertung()}/5 Sterne</p>
-                                            </div>
-                                            <div class="col-12">
                                                 <div class="row">
-                                                    <div class="card-button-frame col-6">
-                                                        <form action="/WebProjekt/BookingPage" method="post">
-                                                            <button type="submit" name="hotelId" value=${unterkunft.getId()} class="card-button btn btn-primary actionbutton card-button">Buchen</button>
-                                                        </form>
+                                                    <div class="col-6">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <p class="card-text">${unterkunft.getBeschreibung()}</p>
+                                                            </div>
+                                                            <div class="card-rating-frame col-12">
+                                                                <p class="card-text">Bewertung: ${unterkunft.getBewertung()}/5 Sterne</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="card-button-frame col-6">
-                                                        <form action="/WebProjekt/InfoPage" method="post">
-                                                            <button type="submit" name="hotelId" value=${unterkunft.getId()} class="card-button btn btn-primary actionbutton card-button">Details</button>
-                                                        </form>
+                                                    <div class="card-rating-frame col-6">
+                                                        <h1 class="card-text">${unterkunft.getPreis()}€</h1>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="card-button-frame col-6">
+                                                                <form action="/WebProjekt/BookingPage" method="post">
+                                                                    <button type="submit" name="hotelId" value=${unterkunft.getId()} class="card-button btn btn-primary actionbutton card-button">Buchen</button>
+                                                                </form>
+                                                            </div>
+                                                            <div class="card-button-frame col-6">
+                                                                <form action="/WebProjekt/InfoPage" method="post">
+                                                                    <button type="submit" name="hotelId" value=${unterkunft.getId()} class="card-button btn btn-primary actionbutton card-button">Details</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -120,12 +131,13 @@
                             </div>
                         </div>
                     </div>
-                </c:forEach>
-            </div>
+                </div>
+            </c:forEach>
         </div>
     </div>
-    <!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script-->
-    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script-->
-    <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script-->
+</div>
+<!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script-->
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script-->
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script-->
 </jsp:attribute>
 </template:mainTemplate>
