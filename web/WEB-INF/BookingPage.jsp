@@ -16,9 +16,45 @@
     </jsp:attribute>
 
     <jsp:attribute name="body">
-        <div class="container-fluid">
+        <div class="container-fluid p-3 mb-5 container-top">
             <div class="row">
+               <form col-md-2 pt-3>
+                   <!--  Normales  einzeiliges  Eingabefeld  -->
+                    <div class="form-group">
+                        <input  type="text" class="form-control" id="name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input  type="text" class="form-control" id="vorname" placeholder="Vorname">
+                    </div>
+                   <div class="form-group">
+                        <input  type="text" class="form-control" id="stadt" placeholder="PLZ, Wohnort">
+                    </div>
+                   <div class="form-group">
+                        <input  type="text" class="form-control" id="strasse" placeholder="Straße, Hausnummer">
+                    </div>
+                   <div class="radio">
+                        <label>
+                            <input type="radio" name="bezahlmethode" id="optionsRadios1" value="paypal" checked>   
+                            PayPal
+                        </label>
+                       <label>
+                            <input type="radio" name="bezahlmethode" id="optionsRadios1" value="bankeinzug" checked>   
+                            Bankeinzug
+                        </label>
+                       <label>
+                            <input type="radio" name="bezahlmethode" id="optionsRadios1" value="direktbezahlung" checked>   
+                            Bezahlung in Unterkunft
+                        </label>
+                    </div>
                 
+                   <c:choose>
+                       <c:when test="${bezahlmethode == true}">
+                           <div class="form-group">
+                                <input  type="text" class="form-control" id="name" placeholder="IBAN">
+                           </div>
+                       </c:when>
+                   </c:choose>
+               </form>
             </div>
         </div>
         
