@@ -1,32 +1,38 @@
-.header {
-    background-color: #8888ff;
-    height: 56px;
+.card-title-frame {
+    width: 100%;
 }
 
-.searchbutton{
-    background-color: #8888ff;
-    border-color: #8888ff;
-}
-
-body {
-    background-color: #dbecff;
-}
-
-.container-top {
-    margin-top: 55.6px;
-}
-
-.middle-header-div {
-    width:100%;
-}
-
-.header-title {
+.card-title {
     text-align: center;
-    color: white;
+    margin-left: 5%;
+}
+
+.card-pic-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-pic-frame {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card-picture {
+    width: 10%;
+    border-radius: 4px;
+}
+
+.card-button-frame {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .card-button {
-    background-color: #8888ff;
-    border-color: #8888ff;
-    margin: 4px;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
 }

@@ -1,0 +1,26 @@
+body {
+    background-color: #dbecff;
+}
+
+.header {
+    background-color: #007bff;
+    height: 56px;
+}
+
+.middle-header-div {
+    width:100%;
+}
+
+.header-title {
+    text-align: center;
+    color: white;
+}
+
+.container-top {
+    margin-top: 55.6px;
+}
+
+.actionbutton{
+    background-color: #007bff;
+    border-color: #007bff;
+}
