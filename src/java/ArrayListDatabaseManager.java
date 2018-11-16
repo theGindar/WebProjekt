@@ -8,9 +8,9 @@ public class ArrayListDatabaseManager {
 
     public ArrayListDatabaseManager() {
         addUnterkunft(new Unterkunft("Vollpension", 40, "cool", 3, "Hostel am Graben", "Aachen", "Hostel"));
-        addUnterkunft(new Unterkunft("Vollpension", 70, "cool", 3, "Hotel am Erisee", "Berlin", "Luxushotel"));
+        addUnterkunft(new Unterkunft("Vollpension", 70, "cool", 3, "Hotel am Erisee", "Berlin", "Hotel"));
         addUnterkunft(new Unterkunft("Halbpension", 20, "sehr cool", 4, "Herberge am Graben", "Aachen", "Jugendherberge"));
-        addUnterkunft(new Unterkunft("Vollpension", 250, "cool", 5, "Luxushotel für Schluffis", "Dessau", "Luxushotel"));
+        addUnterkunft(new Unterkunft("Vollpension", 250, "cool", 5, "Luxushotel für Schluffis", "Dessau", "Hotel"));
     }
 
     public ArrayList<Unterkunft> getAllUnterkuenfte() {

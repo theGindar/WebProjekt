@@ -99,7 +99,7 @@ public class SearchPageServlet extends HttpServlet {
         return budgetKategorien;
     }
 
-    private ArrayList<Unterkunft> getUnterkuenfte(String stadtKategorie, String unterkunftKategorie, String budgetKategorie) {
-        return dbManager.getFilteredUnterkuenfte(stadtKategorie, unterkunftKategorie, budgetKategorie);
+    private ArrayList<Unterkunft> getUnterkuenfte(String chosenStadtKategorie, String chosenUnterkunftKategorie, String chosenBudgetKategorie) {
+        return dbManager.getFilteredUnterkuenfte(chosenStadtKategorie, chosenUnterkunftKategorie, chosenBudgetKategorie);
     }
 }
