@@ -60,7 +60,7 @@ public class CreateDataBase extends HttpServlet {
         }
         try{
             connection.createStatement().execute( //Tabelle hotel
-                    "CREATE TABLE hotel(hotelID INTEGER PRIMARY KEY, rating INTEGER, mainimg VARCHAR(50), price DOUBLE, description VARCHAR(2000), name VARCHAR(100))"
+                "CREATE TABLE hotel(hotelID INTEGER PRIMARY KEY, rating INTEGER, mainimg VARCHAR(50), price DOUBLE, description VARCHAR(2000), name VARCHAR(100))"
             );
             System.out.println("Database hotel created!");
         }catch(Exception ex){
@@ -68,7 +68,7 @@ public class CreateDataBase extends HttpServlet {
         }
         try{
             connection.createStatement().execute( //Tabelle hotel
-                    "CREATE TABLE infocards(infocardID INTEGER PRIMARY KEY, hotelID INTEGER, imgpath VARCHAR(50), text VARCHAR(2000))"
+                "CREATE TABLE infocards(infocardID INTEGER PRIMARY KEY, hotelID INTEGER, imgpath VARCHAR(50), text VARCHAR(2000))"
             );
             System.out.println("Database infocards created!");
         }catch(Exception ex){
