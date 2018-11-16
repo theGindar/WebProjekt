@@ -16,7 +16,9 @@
 
         <nav class="navbar fixed-top header">
             <div class="middle-header-div">
-                <h1 class="header-title">Unterkunftsuche</h1>
+                <form action="/WebProjekt/" method="POST">
+                    <button type="submit" class="header-title-pseudobutton btn actionbutton">Bucking.com</button>
+                </form>
             </div>
         </nav>
 

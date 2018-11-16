@@ -5,15 +5,29 @@ body {
 .header {
     background-color: #007bff;
     height: 56px;
+    padding: 0px;
 }
 
 .middle-header-div {
     width:100%;
+    text-align: center;
 }
 
-.header-title {
+.header-title-pseudobutton {
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
     color: white;
+    padding: 0;
+    padding-bottom: 3px;
+    font-size:xx-large;
+}
+
+.header-title-pseudobutton:hover,
+.header-title-pseudobutton:focus,
+.header-title-pseudobutton:active{
+    background-color: #007bff;
+    border-color: #007bff;
 }
 
 .container-top {

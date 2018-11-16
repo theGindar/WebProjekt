@@ -22,13 +22,22 @@
 }
 
 .card-picture {
-    width: 10%;
     border-radius: 4px;
+}
+
+.card-price-frame {
+    text-align: center;
+}
+
+.card-prize {
+    margin: unset;
+    vertical-align: middle;
 }
 
 .card-button-frame {
     padding-left: 0;
     padding-right: 0;
+    margin-top: 3px;
 }
 
 .card-button {
