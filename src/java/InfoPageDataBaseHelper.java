@@ -64,8 +64,23 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
             }
         }else{
             return "hotel";
-        }
-        
+        }   
+    }
+    protected String getPriceFromDB(int hotelID){
+        if(!dev){
+            String query = "SELECT price FROM hotel WHERE hotelID=" + String.valueOf(hotelID);
+            ResultSet rs = this.readFromDB(query);
+
+            try {
+                rs.next();
+                return rs.getString(1);
+            } catch (SQLException ex) {
+                System.out.println(ex);
+                return null;
+            }
+        }else{
+            return "hotel";
+        }   
     }
     protected ArrayList<String> getInfoCardsFromDB(int hotelID){
         if(!dev){
