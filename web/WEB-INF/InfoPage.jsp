@@ -7,6 +7,7 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="template" tagdir="/WEB-INF/tags/templates" %>
 <!DOCTYPE html>
 <html>
 
@@ -16,10 +17,11 @@
     <title>viewhotel</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/infoPageStyles.css">
+    <link rel="stylesheet" href="assets/css/mainTemplateStyles.css"
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md fixed-top">
+    <!--<nav class="navbar navbar-light navbar-expand-md fixed-top">
         <div class="container-fluid"><a class="navbar-brand" href="#">Unterkunftsuche</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
@@ -30,7 +32,14 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <nav class="navbar fixed-top header">
+            <div class="middle-header-div">
+                <form action="/WebProjekt/" method="POST">
+                    <button type="submit" class="header-title-pseudobutton btn actionbutton">Bucking.com</button>
+                </form>
+            </div>
+        </nav>
     <%String imgname = request.getAttribute("mainpicture").toString();%>
     <section id="start" style='background-image: url("assets/img/<%=imgname%>.jpg");'>
         <div class="row" style="margin-right: 0px;">
