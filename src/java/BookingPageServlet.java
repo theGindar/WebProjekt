@@ -33,7 +33,7 @@ public class BookingPageServlet extends HttpServlet {
         
         boolean bmethode = bezahlmethode.equals("bankeinzug");
         
-        request.setAttribute("bezlmethode", bmethode);
+        request.setAttribute("bezahlmethode", bmethode);
         
         // Anfrage an eine JSP weiterleiten, um damit den HTML-Code
         // der Seite zu generieren
