@@ -5,7 +5,7 @@
 1. unser Repository **klonen**
 2. neues Repository als **ZIP downloaden** auf den eigenen Computer
 3. **ZIP entpacken**
-4. Ordner, der erstellt wurde, in "**WebProjekt**" umbenennen
+4. Ordner der erstellt wurde (sollte *Web-Projekt-master* heißen) in "*WebProjekt*" **umbenennen**
 5. Ordner wieder in **ZIP einpacken** (Name des neuen ZIPs ist egal)
 6. Mit Netbeans das neu erstellte **ZIP importieren** (File --> Import Project --> From ZIP...)
 7. importiertes **Projekt starten** (Rechtsklick aufs Projekt --> Run)
