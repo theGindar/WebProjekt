@@ -7,5 +7,5 @@ $("#submit_rating_button").click(function() {
 
   ratingrequest.send("hotelID=" + $("#hotelID").val() + "&heading=" + $(
       "#heading_input").val() + "&comment=" + $("#comment_input").val() +
-    "testcomment" + "&rating=" + $("#rating_range").val());
+    "&rating=" + $("#rating_range").val());
 });

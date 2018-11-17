@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Patrick Günther
+ * @author Patrick Guenther
  */
 @WebServlet(urlPatterns = {"/CreateDataBase"})
 public class CreateDataBase extends HttpServlet {

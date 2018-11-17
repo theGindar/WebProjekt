@@ -2,6 +2,7 @@
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -28,19 +29,6 @@ public class DataBaseHelper {
         }catch(Exception e){
             System.out.println("failed connecting to database... " + e);
             return null;
-        }
-    }
-    protected void writeToDB(String query){
-        try{
-            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-            //Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
-            Connection connection = DriverManager.getConnection("jdbc:derby:hoteldatadb;create=true");
-            Statement dbStatement = connection.createStatement();     
-            dbStatement.executeUpdate(query);
-            System.out.println("successfully connected!");   
-        }catch(Exception e){
-            System.out.println("failed connecting to database... " + e);
-            
         }
     }
 }

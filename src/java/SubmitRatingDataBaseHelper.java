@@ -1,3 +1,8 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,18 +11,24 @@
 
 /**
  *
- * @author trybeforeyoubuy
+ * @author Patrick Guenther
  */
 public class SubmitRatingDataBaseHelper extends DataBaseHelper{
     protected void writeRatingToDB(String hotelID,String heading, String comment, String rating){
-        String saveHotelID = hotelID;
-        String saveHeading = heading;
-        String saveComment = comment;
-        String saveRating = String.valueOf(rating);
-        String commentID = "1";
-          
-        String query = "INSERT INTO ROOT.comments(hotelID, heading, comment, rating) VALUES (" + saveHotelID + ", '"+ saveHeading + "', '" + saveComment + "', " + saveRating + ")";
-        System.out.println("QUERY: " + query);
-        this.writeToDB(query);
+        try{
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver"); 
+            Connection connection = DriverManager.getConnection("jdbc:derby:hoteldatadb;create=true");
+            // prevents SQL injections by using prepared statement
+            PreparedStatement ps = connection.prepareStatement("INSERT INTO comments (hotelID, heading, comment, rating) VALUES (?, ?, ?, ?)");
+            ps.setString(1, hotelID);
+            ps.setString(2, heading);
+            ps.setString(3, comment);
+            ps.setInt(4, Integer.parseInt(rating));
+            ps.executeUpdate();
+            System.out.println("successfully connected!");   
+        }catch(Exception e){
+            System.out.println("failed connecting to database... " + e);
+            
+        }
     }
 }
