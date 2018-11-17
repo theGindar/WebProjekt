@@ -1,9 +1,11 @@
 <%--
     Document   : InfoPage
     Created on : Oct 26, 2018, 12:50:57 PM
-    Author     : trybeforeyoubuy
+    Author     : Patrick Günther
 --%>
 
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -52,14 +54,17 @@
         </div>
     </section>
     <section class="secondarysection">
-        <%String[][] infocards = (String[][])request.getAttribute("infocards");%>
-        <%for(int i = 0; i < infocards.length; i++){%>
+        <%
+            ArrayList<String> infocards = (ArrayList<String>)request.getAttribute("infocards");
+            Iterator infocardsIterator = infocards.iterator();
+        %>
+        <%while(infocardsIterator.hasNext()){%>
             <div class="card fadein">
                 <div class="card-body">
                     <div class="row infocolumn">
-                        <div class="col my-auto"><img class="rounded img-fluid infoimage" src="assets/img/<%=infocards[i][0]%>.jpg"></div>
+                        <div class="col my-auto"><img class="rounded img-fluid infoimage" src="assets/img/<%=infocardsIterator.next()%>.jpg"></div>
                         <div class="col">
-                            <p class="infoparagraph"><%=infocards[i][1]%></p>
+                            <p class="infoparagraph"><%=infocardsIterator.next()%></p>
                         </div>
                     </div>
                 </div>
@@ -67,14 +72,17 @@
         <% } %>
     </section>
     <section class="secondarysection">
-        <%String[][] ratingcards = (String[][])request.getAttribute("ratingcards");%>
-        <%for(int i = 0; i < ratingcards.length; i++){%>
+        <%
+            ArrayList<String> ratingcards = (ArrayList<String>)request.getAttribute("ratingcards");
+            Iterator ratingcardsIterator = ratingcards.iterator();
+        %>
+        <%while(ratingcardsIterator.hasNext()){%>
             <div class="card fadein">
                 <div class="card-body">
-                    <h4 class="card-title"><%=ratingcards[i][0]%></h4>
-                    <p class="card-text"><%=ratingcards[i][1]%></p>
+                    <h4 class="card-title"><%=ratingcardsIterator.next()%></h4>
+                    <p class="card-text"><%=ratingcardsIterator.next()%></p>
                     <div class="row no-gutters align-content-center smallratingrow">
-                        <%int commentrating = Integer.parseInt(ratingcards[i][2]);%>
+                        <%int commentrating = Integer.parseInt(String.valueOf(ratingcardsIterator.next()));%>
                         <%for(int j = 0; j < commentrating; j++){%>
                             <div class="col offset-1"><img src="assets/img/ratingicon.png" class="smallratingicon"></div>
                         <% } %>
