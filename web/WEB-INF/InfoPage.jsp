@@ -11,9 +11,10 @@
 <html>
 
 <head>
+    <%String mainheading = request.getAttribute("hotelname").toString();%>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>viewhotel</title>
+    <title><%=mainheading%></title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/infoPageStyles.css">
     <link rel="stylesheet" href="assets/css/mainTemplateStyles.css"
@@ -32,13 +33,10 @@
     <section id="start" style='background-image: url("assets/img/<%=imgname%>.jpg");'>
         <div class="row" style="margin-right: 0px;">
             <div class="col">
-                <%
-                    String mainheading = request.getAttribute("hotelname").toString();
-                    String price = "ab " + request.getAttribute("price").toString() + "€";
-                %>
+                <%String price = "ab " + request.getAttribute("price").toString() + "€";%>
                 <h1 class="text-center" id="mainheading"> <%=mainheading%> </h1>
                 <h2 class="text-center" id="price"> <%=price%> </h2>
-                
+
             </div>
         </div>
         <div class="row justify-content-center align-items-center align-content-center" id="ratingrow">
@@ -51,7 +49,7 @@
                 <% } %>
         </div>
         <div class="row" style="margin-top: 40px;" style="margin-right: 0px">
-            <div class="col-xl-6"><button class="btn btn-primary btn-lg mainbutton" type="button" style="width: 100%;">Buchen</button></div>
+            <div class="col-xl-6"><button id="bookingbutton" class="btn btn-primary btn-lg mainbutton" type="button" style="width: 100%;">Buchen</button></div>
             <div class="col-xl-6"><button id="jumptoratingbutton" class="btn btn-primary btn-lg mainbutton" type="button" style="width: 100%;">Bewerten</button></div>
         </div>
     </section>
@@ -105,9 +103,9 @@
         <div class="row">
             <div class="col">
                 <h2 class="commentdescription">Titel:</h2>
-                <input type="text" id="heading_input" maxlength="200" style="background-size: auto;width: 100%;height: 50hv;">
+                <input type="text" id="heading_input" maxlength="70" style="background-size: auto;width: 100%;height: 50hv;">
                 <h2 class="commentdescription">Text:</h2>
-                <textarea id="comment_input" style="width: 100%;"></textarea></div>
+                <textarea id="comment_input" maxlength="500" style="width: 100%;"></textarea></div>
         </div>
         <div class="row">
             <div class="col">

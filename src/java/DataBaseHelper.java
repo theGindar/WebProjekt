@@ -17,12 +17,15 @@ import java.sql.Statement;
  * @author Patrick Guenther
  */
 public class DataBaseHelper {
-    protected ResultSet readFromDB(String query){
+    protected ResultSet readFromDB(String query, int limit){
         try{
-            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-            //Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver"); 
             Connection connection = DriverManager.getConnection("jdbc:derby:hoteldatadb;create=true");
             Statement dbStatement = connection.createStatement();
+            // limits the number of rows returned from db
+            if(limit != 0){
+                dbStatement.setMaxRows(limit);
+            }
             ResultSet rs = dbStatement.executeQuery(query);
             System.out.println("successfully connected!"); 
             return rs;

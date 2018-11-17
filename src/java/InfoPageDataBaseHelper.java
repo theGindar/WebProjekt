@@ -21,7 +21,7 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
     protected String getHotelNameFromDB(int hotelID){
         if(!dev){
             String query = "SELECT Name FROM hotel WHERE HotelID =" + String.valueOf(hotelID);
-            ResultSet rs = this.readFromDB(query);
+            ResultSet rs = this.readFromDB(query, 0);
 
             try {
                 rs.next();
@@ -37,7 +37,7 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
     protected int getMainRatingFromDB(int hotelID){
         if(!dev){
             String query = "SELECT rating FROM hotel WHERE hotelID=" + String.valueOf(hotelID);
-            ResultSet rs = this.readFromDB(query);
+            ResultSet rs = this.readFromDB(query, 0);
 
             try {
                 rs.next();
@@ -53,7 +53,7 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
     protected String getMainImageFromDB(int hotelID){
         if(!dev){
             String query = "SELECT mainimg FROM hotel WHERE hotelID=" + String.valueOf(hotelID);
-            ResultSet rs = this.readFromDB(query);
+            ResultSet rs = this.readFromDB(query, 0);
 
             try {
                 rs.next();
@@ -69,7 +69,7 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
     protected String getPriceFromDB(int hotelID){
         if(!dev){
             String query = "SELECT price FROM hotel WHERE hotelID=" + String.valueOf(hotelID);
-            ResultSet rs = this.readFromDB(query);
+            ResultSet rs = this.readFromDB(query, 0);
 
             try {
                 rs.next();
@@ -85,7 +85,7 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
     protected ArrayList<String> getInfoCardsFromDB(int hotelID){
         if(!dev){
             String query = "SELECT imgpath, text FROM infocards WHERE hotelID=" + String.valueOf(hotelID);
-            ResultSet rs = this.readFromDB(query);
+            ResultSet rs = this.readFromDB(query, 0);
             try {
                 ArrayList<String> resultList = new ArrayList<String>();
                 while(rs.next()){
@@ -111,8 +111,8 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
     }
     protected ArrayList<String>getRatingCardsFromDB(int hotelID){
         if(!dev){
-            String query = "SELECT heading, comment, rating FROM comments WHERE hotelID=" + String.valueOf(hotelID);
-            ResultSet rs = this.readFromDB(query);
+            String query = "SELECT heading, comment, rating FROM comments WHERE hotelID=" + String.valueOf(hotelID) + "ORDER BY commentID DESC";
+            ResultSet rs = this.readFromDB(query, 5);
             try {
                 ArrayList<String> resultList = new ArrayList<String>();
                 while(rs.next()){
