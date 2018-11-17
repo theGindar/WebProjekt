@@ -43,6 +43,13 @@ public class BookingPageServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         
+    String bezahlmethode = (String) request.getParameter("bezahlmethode");
+    
+    HttpSession session = request.getSession();
+    
+    session.setAttribute("bezahlmethode", bezahlmethode);
+
+        
     }
     
 }
