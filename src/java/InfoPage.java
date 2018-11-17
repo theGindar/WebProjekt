@@ -42,6 +42,8 @@ public class InfoPage extends HttpServlet {
                 hotelID = 1; // ändern
             }
               // preis nicht vergessen !!!!!!!!!!
+            request.setAttribute("hotelID", hotelID);
+            request.setAttribute("price", dbHelper.getPriceFromDB(hotelID));
             request.setAttribute("hotelname", dbHelper.getHotelNameFromDB(hotelID));
             request.setAttribute("mainpicture", dbHelper.getMainImageFromDB(hotelID));
             request.setAttribute("rating", dbHelper.getMainRatingFromDB(hotelID));

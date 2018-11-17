@@ -16,27 +16,29 @@
     <title>viewhotel</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/infoPageStyles.css">
+    <link rel="stylesheet" href="assets/css/mainTemplateStyles.css"
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md fixed-top">
-        <div class="container-fluid"><a class="navbar-brand" href="#">Unterkunftsuche</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">First Item</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Second Item</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Third Item</a></li>
-                </ul>
+    <input type="hidden" name="hotelID" id="hotelID" value=<%=request.getAttribute("hotelID").toString()%>>
+    <nav class="navbar fixed-top header">
+            <div class="middle-header-div">
+                <form action="/WebProjekt/" method="POST">
+                    <button type="submit" class="header-title-pseudobutton btn actionbutton">Bucking.com</button>
+                </form>
             </div>
-        </div>
-    </nav>
+        </nav>
     <%String imgname = request.getAttribute("mainpicture").toString();%>
     <section id="start" style='background-image: url("assets/img/<%=imgname%>.jpg");'>
         <div class="row" style="margin-right: 0px;">
             <div class="col">
-                <%String mainheading = request.getAttribute("hotelname").toString();%>
+                <%
+                    String mainheading = request.getAttribute("hotelname").toString();
+                    String price = "ab " + request.getAttribute("price").toString() + "€";
+                %>
                 <h1 class="text-center" id="mainheading"> <%=mainheading%> </h1>
+                <h2 class="text-center" id="price"> <%=price%> </h2>
+                
             </div>
         </div>
         <div class="row justify-content-center align-items-center align-content-center" id="ratingrow">
@@ -48,9 +50,9 @@
                     <div class="col offset-1"><img src="assets/img/ratingicon_placeholder.png" class="ratingicon"></div>
                 <% } %>
         </div>
-        <div class="row" style="margin-top: 40px;">
-            <div class="col-xl-6"><button class="btn btn-primary btn-lg" type="button" style="width: 100%;">Buchen</button></div>
-            <div class="col-xl-6"><button id="jumptoratingbutton" class="btn btn-primary btn-lg" type="button" style="width: 100%;">Bewerten</button></div>
+        <div class="row" style="margin-top: 40px;" style="margin-right: 0px">
+            <div class="col-xl-6"><button class="btn btn-primary btn-lg mainbutton" type="button" style="width: 100%;">Buchen</button></div>
+            <div class="col-xl-6"><button id="jumptoratingbutton" class="btn btn-primary btn-lg mainbutton" type="button" style="width: 100%;">Bewerten</button></div>
         </div>
     </section>
     <section class="secondarysection">

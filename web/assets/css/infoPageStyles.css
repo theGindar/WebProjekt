@@ -1,5 +1,6 @@
 body {
   padding-top: 50px;
+  margin: 0px;
 }
 
 .info h1 {
@@ -7,7 +8,6 @@ body {
 }
 
 #start {
-  width: 100%;
   height: 85vh;
   /*background-image: filter(url("../../assets/img/hotel.jpg"),brightness(0.7));*/
   background-size: cover;
@@ -19,11 +19,16 @@ body {
   padding-top: 120px;
   color: #ffffff;
   font-size: 90px;
-  padding-bottom: 120px;
+  padding-bottom: 40px;
+}
+#price {
+  font-size: 40px;
+  color: #ffffff;
+  padding-bottom: 80px;  
 }
 
-body {
-  background-color: #dbecff;
+#mainbutton {
+  margin-top: 30px;
 }
 
 .infoparagraph {
@@ -80,10 +85,5 @@ body {
 }
 
 .fadein {
-  transition: all 400ms;
-  opacity: 1;
-}
-
-.fade{
-  opacity: 1;
+  opacity: 0;
 }

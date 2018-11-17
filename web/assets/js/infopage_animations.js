@@ -1,34 +1,16 @@
-$(window).scroll(function() {
-  Animate('fadein');
-  console.log('es scrollt');
-});
-
-function Animate(name) {
-  $('.fadein').each(function() {
-    switch (name) {
-      case 'fadein':
-        AddClass(this, 'fade');
-        break;
-    }
-    console.log('es scrollt2');
+$(document).ready(function() {
+  $(window).scroll(function() {
+    $('.fadein').each(function(i) {
+      var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+      var bottom_of_window = $(window).scrollTop() + $(window).height();
+      if (bottom_of_window > (bottom_of_object - 200)) {
+        $(this).animate({
+          'opacity': '1'
+        }, 500);
+      }
+    });
   });
-};
-
-function AddClass(object, name) {
-  if (IsVisible(object)) {
-    $(object).addClass(name);
-  } else {
-    $(object).removeClass(name);
-  }
-};
-
-function IsVisible(object) {
-  var viewport = $(window).scrollTop() + $(window).height();
-  var offset = $(object).offset();
-  offset.bottom = offset.top + $(object).outerHeight();
-  return (!(viewport < (offset.top + 200) || $(window).scrollTop() > (offset.bottom -
-    200)));
-}
+});
 
 $("#jumptoratingbutton").click(function() {
   $([document.documentElement, document.body]).animate({
