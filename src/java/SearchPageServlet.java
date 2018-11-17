@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns = {
-    "",
     "/SearchPage"})
 public class SearchPageServlet extends HttpServlet {
     private ArrayListDatabaseManager dbManager = new ArrayListDatabaseManager();

@@ -34,27 +34,27 @@
                     </div>
                    <div class="radio">
                         <label>
-                            <input type="radio" name="bezahlmethode" id="optionsRadios1" value="paypal" checked>   
+                            <input type="radio" name="bezahlmethode" id="paypal" value="paypal" checked>   
                             PayPal
                         </label>
                        <label>
-                            <input type="radio" name="bezahlmethode" id="optionsRadios1" value="bankeinzug" checked>   
+                            <input type="radio" name="bezahlmethode" id="bankeinzug" value="bankeinzug" checked>   
                             Bankeinzug
                         </label>
                        <label>
-                            <input type="radio" name="bezahlmethode" id="optionsRadios1" value="direktbezahlung" checked>   
+                            <input type="radio" name="bezahlmethode" id="direktbezahlung" value="direktbezahlung" checked>   
                             Bezahlung in Unterkunft
                         </label>
                     </div>
+                 
+                   
+                    <c:when test="${bezahlmethode == "bankeinzug"}">
+                       <div class="form-group">
+                            <input  type="text" class="form-control" id="iban" placeholder="IBAN">
+                       </div>
+                   </c:when>
                 
-                   <c:choose>
-                       <c:when test="${bezahlmethode == true}">
-                           <div class="form-group">
-                                <input  type="text" class="form-control" id="name" placeholder="IBAN">
-                           </div>
-                       </c:when>
-                   </c:choose>
-               </form>
+                </form>
             </div>
         </div>
         
