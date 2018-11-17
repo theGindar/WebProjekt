@@ -18,7 +18,7 @@
     <jsp:attribute name="body">
         <div class="container-fluid p-3 mb-5 container-top">
             <div class="row">
-               <form col-md-2 pt-3>
+               <form col-md-2 pt-3 method="POST">
                    <!--  Normales  einzeiliges  Eingabefeld  -->
                     <div class="form-group">
                         <input  type="text" class="form-control" id="name" placeholder="Name">
@@ -34,32 +34,30 @@
                     </div>
                    <div class="radio">
                         <label>
-                            <input type="radio" name="bezahlmethode" id="optionsRadios1" value="paypal" checked>   
+                            <input type="radio" name="bezahlmethode" id="paypal" value="paypal" checked>   
                             PayPal
                         </label>
                        <label>
-                            <input type="radio" name="bezahlmethode" id="optionsRadios1" value="bankeinzug" checked>   
+                            <input type="radio" name="bezahlmethode" id="bankeinzug" value="bankeinzug" checked>   
                             Bankeinzug
                         </label>
                        <label>
-                            <input type="radio" name="bezahlmethode" id="optionsRadios1" value="direktbezahlung" checked>   
+                            <input type="radio" name="bezahlmethode" id="direktbezahlung" value="direktbezahlung" checked>   
                             Bezahlung in Unterkunft
                         </label>
                     </div>
-                
+                 
                    <c:choose>
-                       <c:when test="${bezahlmethode == true}">
-                           <div class="form-group">
-                                <input  type="text" class="form-control" id="name" placeholder="IBAN">
-                           </div>
-                       </c:when>
+                        <c:when test="${1 == 1}">
+                            <div class="form-group">
+                                <input  type="text" class="form-control" id="iban" placeholder="IBAN">
+                            </div>
+                        </c:when>
                    </c:choose>
-               </form>
+                </form>
             </div>
         </div>
         
-    <!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script-->
-    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script-->
-    <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script-->
+
 </jsp:attribute>
 </template:mainTemplate>

@@ -5,12 +5,17 @@ public class ArrayListDatabaseManager {
 
     private static ArrayList<Unterkunft> unterkuenfte = new ArrayList<>();
     private static int lastID = -1;
+    private boolean unterkuenfteLoaded = false;
 
     public ArrayListDatabaseManager() {
-        addUnterkunft(new Unterkunft("Vollpension", 40, "cool", 3, "Hostel am Graben", "Aachen", "Hostel"));
-        addUnterkunft(new Unterkunft("Vollpension", 70, "cool", 3, "Hotel am Erisee", "Berlin", "Hotel"));
-        addUnterkunft(new Unterkunft("Halbpension", 20, "sehr cool", 4, "Herberge am Graben", "Aachen", "Jugendherberge"));
-        addUnterkunft(new Unterkunft("Vollpension", 250, "cool", 5, "Luxushotel für Schluffis", "Dessau", "Hotel"));
+        if (!unterkuenfteLoaded) {
+            addUnterkunft(new Unterkunft("Vollpension", 40, "cool", 3, "Hostel am Graben", "Aachen", "Hostel"));
+            addUnterkunft(new Unterkunft("Vollpension", 70, "cool", 3, "Hotel am Erisee", "Berlin", "Hotel"));
+            addUnterkunft(new Unterkunft("Halbpension", 20, "sehr cool", 4, "Herberge am Graben", "Aachen", "Jugendherberge"));
+            addUnterkunft(new Unterkunft("Vollpension", 250, "cool", 5, "Luxushotel für Schluffis", "Dessau", "Hotel"));
+            
+            unterkuenfteLoaded = true;
+        }
     }
 
     public ArrayList<Unterkunft> getAllUnterkuenfte() {
@@ -51,7 +56,7 @@ public class ArrayListDatabaseManager {
                 returnUnterkuenfte = (ArrayList<Unterkunft>) helpUnterkunftList.clone();
             }
         } catch (NumberFormatException e) {
-            
+
         }
 
         return returnUnterkuenfte;

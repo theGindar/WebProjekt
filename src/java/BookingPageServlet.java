@@ -28,13 +28,7 @@ public class BookingPageServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-        
-        String bezahlmethode = request.getParameter("bezahlmethode");
-        
-        boolean bmethode = bezahlmethode.equals("bankeinzug");
-        
-        request.setAttribute("bezahlmethode", bmethode);
-        
+       
         // Anfrage an eine JSP weiterleiten, um damit den HTML-Code
         // der Seite zu generieren
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/BookingPage.jsp");
@@ -48,6 +42,13 @@ public class BookingPageServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
+        
+    String bezahlmethode = (String) request.getParameter("bezahlmethode");
+    
+    HttpSession session = request.getSession();
+    
+    session.setAttribute("bezahlmethode", bezahlmethode);
+
         
     }
     

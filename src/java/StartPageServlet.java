@@ -21,6 +21,7 @@ import javax.servlet.http.HttpSession;
  * @author D070483
  */
 @WebServlet(urlPatterns = {
+    "",
     "/StartPage"})
 public class StartPageServlet extends HttpServlet {   
     private ArrayListDatabaseManager dbManager = new ArrayListDatabaseManager();
