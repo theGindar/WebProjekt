@@ -5,7 +5,7 @@ public class ArrayListDatabaseManager {
 
     private static ArrayList<Unterkunft> unterkuenfte = new ArrayList<>();
     private static int lastID = -1;
-    private boolean unterkuenfteLoaded = false;
+    private static boolean unterkuenfteLoaded = false;
 
     public ArrayListDatabaseManager() {
         if (!unterkuenfteLoaded) {
