@@ -1,6 +1,6 @@
-# Herzlich willkommen beim WebProjekt von David, Patrick und Jonas :)
+### Herzlich willkommen beim WebProjekt von David, Patrick und Jonas :)
 
-### Anleitung um das Projekt zu starten:
+##### Anleitung um das Projekt zu starten:
 
 1. unser Repository **klonen**
 2. neues Repository als **ZIP downloaden** auf den eigenen Computer
