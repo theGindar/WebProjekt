@@ -20,7 +20,7 @@ public class DataBaseHelper {
         try{
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
             //Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
-            Connection connection = DriverManager.getConnection("jdbc:derby:hoteldb;create=true");
+            Connection connection = DriverManager.getConnection("jdbc:derby:hoteldatadb;create=true");
             Statement dbStatement = connection.createStatement();
             ResultSet rs = dbStatement.executeQuery(query);
             System.out.println("successfully connected!"); 
@@ -34,7 +34,7 @@ public class DataBaseHelper {
         try{
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
             //Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelDataBase", "root", "1234"); 
-            Connection connection = DriverManager.getConnection("jdbc:derby:hoteldb;create=true");
+            Connection connection = DriverManager.getConnection("jdbc:derby:hoteldatadb;create=true");
             Statement dbStatement = connection.createStatement();     
             dbStatement.executeUpdate(query);
             System.out.println("successfully connected!");   

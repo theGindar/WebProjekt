@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  * @author Patrick Guenther
  */
 public class InfoPageDataBaseHelper extends DataBaseHelper {
-    boolean dev = true; //bypass the database for testing the layout of jsp
+    boolean dev = false; //bypass the database for testing the layout of jsp
     protected String getHotelNameFromDB(int hotelID){
         if(!dev){
             String query = "SELECT Name FROM hotel WHERE HotelID =" + String.valueOf(hotelID);
@@ -36,7 +36,7 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
     }
     protected int getMainRatingFromDB(int hotelID){
         if(!dev){
-            String query = "SELECT Rating FROM hotel WHERE hotelID=" + String.valueOf(hotelID);
+            String query = "SELECT rating FROM hotel WHERE hotelID=" + String.valueOf(hotelID);
             ResultSet rs = this.readFromDB(query);
 
             try {
@@ -69,7 +69,7 @@ public class InfoPageDataBaseHelper extends DataBaseHelper {
     }
     protected ArrayList<String> getInfoCardsFromDB(int hotelID){
         if(!dev){
-            String query = "SELECT text, imgpath FROM hotel WHERE hotelID=" + String.valueOf(hotelID);
+            String query = "SELECT imgpath, text FROM infocards WHERE hotelID=" + String.valueOf(hotelID);
             ResultSet rs = this.readFromDB(query);
             try {
                 ArrayList<String> resultList = new ArrayList<String>();

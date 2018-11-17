@@ -81,7 +81,7 @@ body {
 
 .fadein {
   transition: all 400ms;
-  opacity: 0;
+  opacity: 1;
 }
 
 .fade{
