@@ -91,9 +91,9 @@ public class SearchPageServlet extends HttpServlet {
     private ArrayList<String> getBudgetKategorien() {
         ArrayList<String> budgetKategorien = new ArrayList();
 
-        budgetKategorien.add("20");
-        budgetKategorien.add("25");
-        budgetKategorien.add("200");
+        budgetKategorien.add("30");
+        budgetKategorien.add("50");
+        budgetKategorien.add("100");
 
         return budgetKategorien;
     }

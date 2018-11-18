@@ -84,7 +84,7 @@
                         <div class="col-md-12">
                             <div class="no-content-card card my-3 mx-md-5 bg-light">
                                 <div class="card-body">
-                                    <h3 class="no-content-card-text">Es sind leider keine passenden Unterkünfte vorhanden :(</h3>
+                                    <h3 class="no-content-card-text">Wir konnten leider keine passenden Unterkünfte finden :(</h3>
                                 </div>
                             </div>
                         </div>
@@ -112,25 +112,25 @@
                                                                     <p class="card-text">${unterkunft.getBeschreibung()}</p>
                                                                 </div>
                                                                 <div class="card-rating-frame col-12">
-                                                                    <p class="card-text">Bewertung: ${unterkunft.getBewertung()}/5 Sterne</p>
+                                                                    <p class="card-text card-text-bewertung">Bewertung: ${unterkunft.getBewertung()} Sterne</p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
-                                                    <div class="row">
-                                                        <div class="card-price-frame col-6">
-                                                            <h1 class="card-prize">${unterkunft.getPreis()}€</h1>
+                                                <div class="col-md-4 container-fluid">
+                                                    <div class="card-prize-buttons-row row">
+                                                        <div class="card-price-frame col-6 col-md-12">
+                                                            <h1 class="card-prize-text">${unterkunft.getPreis()}€</h1>
                                                         </div>
-                                                        <div class="col-6">
+                                                        <div class="col-6 col-md-12">
                                                             <div class="row">
-                                                                <div class="card-button-frame col-12">
+                                                                <div class="card-button-frame col-12 col-md-6">
                                                                     <form action="/WebProjekt/BookingPage" method="post">
                                                                         <button type="submit" name="hotelId" value=${unterkunft.getId()} class="card-button btn btn-primary actionbutton card-button">Buchen</button>
                                                                     </form>
                                                                 </div>
-                                                                <div class="card-button-frame col-12">
+                                                                <div class="card-button-frame col-12 col-md-6">
                                                                     <form action="/WebProjekt/InfoPage" method="post">
                                                                         <button type="submit" name="hotelId" value=${unterkunft.getId()} class="card-button btn btn-primary actionbutton card-button">Details</button>
                                                                     </form>

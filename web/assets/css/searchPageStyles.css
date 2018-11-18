@@ -25,13 +25,21 @@
     border-radius: 4px;
 }
 
-.card-price-frame {
-    text-align: center;
+.card-text-bewertung {
+    font-weight: bold;
 }
 
-.card-prize {
-    margin: unset;
-    vertical-align: middle;
+.card-prize-buttons-row {
+}
+
+.card-price-frame {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.card-prize-text {
+    margin: auto;
 }
 
 .card-button-frame {
