@@ -22,7 +22,7 @@
 
 <body>
     <form action ="/WebProjekt/BookingPage" method="POST" id="id_form" type="hidden" >
-        <input type="hidden" name="hotelID" id="hotelID" value=<%=request.getAttribute("hotelID").toString()%>>
+        <input type="hidden" name="hotelId" id="hotelID" value=<%=request.getAttribute("hotelID").toString()%>>
     </form>
     <nav class="navbar fixed-top header">
             <div class="middle-header-div">
