@@ -21,6 +21,11 @@ body {
   font-size: 90px;
   padding-bottom: 40px;
 }
+@media (max-width: 490px) {
+  #mainheading {
+    font-size: 60px;
+  }  
+}
 #price {
   font-size: 40px;
   color: #ffffff;

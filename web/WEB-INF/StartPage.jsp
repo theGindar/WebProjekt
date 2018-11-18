@@ -15,10 +15,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>Startseite</title>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/infoPageStyles.css">
+        <link rel="stylesheet" href="assets/css/startPageStyles.css">
     </head>
     
     <body>
+        <div class="container-fluid p-3 mb-5 container-top align-items-center justify-content-center">
+            <div class="heading">
+                <div class="row align-items-center justify-content-center">
+                    Bucking.com
+                    <form action="https://www.youtube.com/embed/PP9I6WRD4VI">
+                        <input type="image" src="assets/img/ratingicon.png"/>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid p-3 mb-5 container-top">
             <form action="/WebProjekt/SearchPage" method="post">
                 <div class="row align-items-center justify-content-center">
