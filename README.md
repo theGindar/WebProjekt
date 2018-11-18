@@ -14,3 +14,6 @@
 9. Beim ersten Start ist die Datenbank noch nicht vorhanden. Aus diesem Grund muss zuerst das "CreateDataBase"-Servlet aufgerufen werden. Dazu im Browser die URL http://localhost:8080/WebProjekt/CreateDataBase aufrufen. Die Seite zeigt nichts an. In Netbeans steht wird allerdings in "Output" bei "GlassFish Server 4.1.1" angezeigt, dass 3 Tabellen erstellt und gefüllt wurden.
 9. Nun ist die Applikation bereit und kann über http://localhost:8080/WebProjekt aufgerufen werden.
 10. Im Browser das **Netbeans-Plugin schließen** für realitätsnahes Benutzererlebnis
+
+
+Aus Zeitgründen ist noch nicht der gesamte Funktionsumfang der Anwendung vorhanden, den man bräuchte um sie produktiv einzusetzen. Im jetzigen Zustand nutzt nur die InfoPage die Datenbank, es gibt noch nicht genug Einträge für Unterkünfte und noch nicht genug Bilder (diese würden im realen Einsatz auch an einer anderen Stelle abgelegt). Auch Möglichkeiten für Admins um Einträge für Unterkünfte zu ändern müssten noch implementiert werden.
