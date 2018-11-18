@@ -9,12 +9,10 @@ public class ArrayListDatabaseManager {
 
     public ArrayListDatabaseManager() {
         if (!unterkuenfteLoaded) {
-            addUnterkunft(new Unterkunft("Vollpension", 40,
-                    "Viele umweltfreundliche Details und ein Fahrradverleih in der Unterkunft erwarten Sie in diesem Hotel in Berlin. Das Landmark Eco Hotel befindet sich nur 5 Gehminuten von der beliebten Einkaufsmeile Kurfürstendamm entfernt. WLAN nutzen Sie kostenfrei.\n" +
-"\n. Alle komfortablen energieeffizienten Zimmer im Hotel verfügen über ausgewählte Bettwäsche, Kabel-TV und ein eigenes Bad mit einem Haartrockner. Die umweltfreundliche Sanierung des Landmark Eco Hotel wurde im Jahr 2014 fertiggestellt.", 4, "Landmark Eco Hotel", "Berlin", "Hotel"));
-            addUnterkunft(new Unterkunft("Vollpension", 45, "Das Hotel befindet sich direkt neben der East Side Gallery im angesagten Berliner Bezirk Friedrichshain. Das im August 2018 neu eröffnete Hotel bietet kostenfreies WLAN und einen Biergarten direkt an der Mauer.", 3, "Schulz Hotel Berlin Wall", "Berlin", "Hotel"));
-            addUnterkunft(new Unterkunft("Halbpension", 20, "Dieses Hotel befindet sich nur 200 m vom Aachener Dom entfernt und bietet geräumige Zimmer, ein tägliches Frühstücksbuffet und eine Tiefgarage. Die Bar und die Rezeption sind rund um die Uhr geöffnet.", 4, "Aquis Grana City Hotel", "Aachen", "Jugendherberge"));
-            addUnterkunft(new Unterkunft("Vollpension", 65, "Dieses 4-Sterne-Hotel erwartet Sie mit einem Restaurant und kostenfreiem WLAN in allen Bereichen im Zentrum von Dessau, jeweils 10 Gehminuten vom Bahnhof, dem Rathaus und der Elbe entfernt.", 5, " NH Dessau", "Dessau", "Hostel"));
+            addUnterkunft(new Unterkunft("Vollpension", 40, "cool", 3, "Hostel am Graben", "Aachen", "Hostel"));
+            addUnterkunft(new Unterkunft("Vollpension", 70, "cool", 3, "Hotel am Erisee", "Berlin", "Hotel"));
+            addUnterkunft(new Unterkunft("Halbpension", 20, "sehr cool", 4, "Herberge am Graben", "Aachen", "Jugendherberge"));
+            addUnterkunft(new Unterkunft("Vollpension", 250, "cool", 5, "Luxushotel für Schluffis", "Dessau", "Hotel"));
             
             unterkuenfteLoaded = true;
         }
