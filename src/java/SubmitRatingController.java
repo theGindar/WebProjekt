@@ -34,7 +34,7 @@ public class SubmitRatingController extends HttpServlet {
         
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -60,6 +60,7 @@ public class SubmitRatingController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //sendet die Bewertungsdaten an den SubmitRatingDataBaseHelper
         String hotelID = String.valueOf(request.getParameter("hotelID"));
         String heading = String.valueOf(request.getParameter("heading"));
         String comment = String.valueOf(request.getParameter("comment"));
@@ -76,7 +77,7 @@ public class SubmitRatingController extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "SubmitRatingController";
     }// </editor-fold>
 
 }

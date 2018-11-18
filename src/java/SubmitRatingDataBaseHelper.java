@@ -18,7 +18,7 @@ public class SubmitRatingDataBaseHelper extends DataBaseHelper{
         try{
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver"); 
             Connection connection = DriverManager.getConnection("jdbc:derby:hoteldatadb;create=true");
-            // prevents SQL injections by using prepared statement
+            // Durch die Nutzung von Prepared Statements wird SQL Injections vorgebeugt.
             PreparedStatement ps = connection.prepareStatement("INSERT INTO comments (hotelID, heading, comment, rating) VALUES (?, ?, ?, ?)");
             ps.setString(1, hotelID);
             ps.setString(2, heading);

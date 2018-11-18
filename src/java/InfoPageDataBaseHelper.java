@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  * @author Patrick Guenther
  */
 public class InfoPageDataBaseHelper extends DataBaseHelper {
-    boolean dev = false; //bypass the database for testing the layout of jsp
+    boolean dev = false; //Wenn dev true ist, werden Beispieldaten ohne Datenbankverbindung zurückgegeben, um das Layout der JSP zu testen
     protected String getHotelNameFromDB(int hotelID){
         if(!dev){
             String query = "SELECT Name FROM hotel WHERE HotelID =" + String.valueOf(hotelID);

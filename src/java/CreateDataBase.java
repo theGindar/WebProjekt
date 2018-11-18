@@ -48,7 +48,7 @@ public class CreateDataBase extends HttpServlet {
         
         
     }
-    // createDB() 
+    // createDB() erzeugt die Tabellen der Datenbank
     protected void createDB() throws Exception{
         Class.forName(DRIVER);
         Connection connection = DriverManager.getConnection(JDBC_URL);
@@ -77,6 +77,7 @@ public class CreateDataBase extends HttpServlet {
             System.out.println("Database infocards not created: " + ex);
         }
     }
+    // fillDB() füllt die Tabellen mit Beispieldaten
     protected void fillDB() throws Exception{
         Class.forName(DRIVER);
         Connection connection = DriverManager.getConnection(JDBC_URL);
