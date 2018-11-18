@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(urlPatterns = {"/InfoPage"})
 public class InfoPage extends HttpServlet {
-
+    boolean dev = true;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,10 +36,17 @@ public class InfoPage extends HttpServlet {
         
         try (PrintWriter out = response.getWriter()) {
             int hotelID;
-            if(request.getParameter("hotelID") != null){
-                hotelID = Integer.parseInt(request.getParameter("hotelID"));
+            /* Momentan befindet sich nur ein Eintrag in der Datenbank für das Hotel mit der ID 1. 
+               Da die Searchpage verschiedene IDs schickt, wird für die Entwicklung jeder Request auf die ID 1 gestellt.
+            */
+            if(!dev){ 
+                if(request.getParameter("hotelId") != null){
+                    hotelID = Integer.parseInt(request.getParameter("hotelId"));
+                }else{
+                    hotelID = 1; // Wenn kein Hotel ausgewählt wird, wird das Hotel mit der ID 1 angezeigt --> für Entwicklung
+                }
             }else{
-                hotelID = 1; // Wenn kein Hotel ausgewählt wird, wird das Hotel mit der ID 1 angezeigt --> für Entwicklung
+                hotelID = 1;
             }
             //Erhält die Daten aus der Datenbank und übermittelt sie an die InfoPage.jsp
             request.setAttribute("hotelID", hotelID);

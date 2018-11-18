@@ -122,7 +122,7 @@
                 <output id="range_display" class="d-inline" style="font-size: 50px;">1x</output><img src="assets/img/ratingicon.png" style="width: 50px;"></div>
         </div>
         <div class="row">
-            <div class="col" style="margin-top: 20px;"><button id="submit_rating_button" class="btn btn-primary btn-lg" type="submit">Button</button></div>
+            <div class="col" style="margin-top: 20px;"><button id="submit_rating_button" class="btn btn-primary btn-lg" type="submit">Bewertung senden</button></div>
         </div>
     </section>
     <script src="assets/js/jquery.min.js"></script>
