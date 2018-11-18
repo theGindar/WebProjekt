@@ -27,7 +27,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-12 card-title-frame">
-                                                    <h2 class="card-title">${hotelID}</h2>
+                                                    <h2 class="card-title">Aquis Grana City Hotel</h2>
                                                 </div>
                                                 <div class="card-pic-container col-sm-4 col-10">
                                                     <div class="card-pic-frame">
@@ -36,10 +36,10 @@
                                                 </div>
                                                 <div class="card-content-frame col-sm-8">
                                                     <div class="col-12">
-                                                        <p class="card-text">${unterkunft.getBeschreibung()}</p>
+                                                        <p class="card-text">Dieses Hotel befindet sich nur 200 m vom Aachener Dom entfernt und bietet geräumige Zimmer, ein tägliches Frühstücksbuffet und eine Tiefgarage. Die Bar und die Rezeption sind rund um die Uhr geöffnet.</p>
                                                     </div>
                                                     <div class="card-rating-frame col-12">
-                                                        <p class="card-text card-text-bewertung">Bewertung: ${unterkunft.getBewertung()} Sterne</p>
+                                                        <p class="card-text card-text-bewertung">Bewertung: 4 Sterne</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -48,7 +48,7 @@
                                     <div class="col-md-4 container-fluid">
                                         <div class="card-prize-buttons-row row">
                                             <div class="card-price-frame col-6 col-md-12">
-                                                <h1 class="card-prize-text">${price}€</h1>
+                                                <h1 class="card-prize-text">20€</h1>
                                             </div>
                                         </div>
                                     </div>
