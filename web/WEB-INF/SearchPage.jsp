@@ -124,15 +124,15 @@
                                                             <h1 class="card-prize-text">${unterkunft.getPreis()}€</h1>
                                                         </div>
                                                         <div class="col-6 col-md-12">
-                                                            <div class="row">
+                                                            <div class="card-allbuttons-row row">
                                                                 <div class="card-button-frame col-12 col-md-6">
                                                                     <form action="/WebProjekt/BookingPage" method="post">
-                                                                        <button type="submit" name="hotelId" value=${unterkunft.getId()} class="card-button btn btn-primary actionbutton card-button">Buchen</button>
+                                                                        <button type="submit" name="hotelId" value=${unterkunft.getId()} class="card-button btn btn-primary actionbutton">Buchen</button>
                                                                     </form>
                                                                 </div>
                                                                 <div class="card-button-frame col-12 col-md-6">
                                                                     <form action="/WebProjekt/InfoPage" method="post">
-                                                                        <button type="submit" name="hotelId" value=${unterkunft.getId()} class="card-button btn btn-primary actionbutton card-button">Details</button>
+                                                                        <button type="submit" name="hotelId" value=${unterkunft.getId()} class="card-button btn btn-primary actionbutton">Details</button>
                                                                     </form>
                                                                 </div>
                                                             </div>

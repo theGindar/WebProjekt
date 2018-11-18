@@ -30,6 +30,7 @@
 }
 
 .card-prize-buttons-row {
+    height: 100%;
 }
 
 .card-price-frame {
@@ -40,12 +41,22 @@
 
 .card-prize-text {
     margin: auto;
+    font-size: 70px;
+}
+
+.card-allbuttons-row {
+    height: 100%;
 }
 
 .card-button-frame {
     padding-left: 0;
     padding-right: 0;
     margin-top: 3px;
+}
+
+.card-button-frame {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .card-button {
