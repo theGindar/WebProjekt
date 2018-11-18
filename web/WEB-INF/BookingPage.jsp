@@ -16,7 +16,50 @@
     </jsp:attribute>
 
     <jsp:attribute name="body">
-        
+        <div class="container-fluid p-3 mb-3 container-top">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-12">
+                    <div class="card my-3 mx-md-5 bg-light">
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-12 card-title-frame">
+                                                    <h2 class="card-title">${hotelID}</h2>
+                                                </div>
+                                                <div class="card-pic-container col-sm-4 col-10">
+                                                    <div class="card-pic-frame">
+                                                        <img class="card-picture w-100" src="assets/img/hotel.jpg" alt="Hotel 1" />                               
+                                                    </div>
+                                                </div>
+                                                <div class="card-content-frame col-sm-8">
+                                                    <div class="col-12">
+                                                        <p class="card-text">${unterkunft.getBeschreibung()}</p>
+                                                    </div>
+                                                    <div class="card-rating-frame col-12">
+                                                        <p class="card-text card-text-bewertung">Bewertung: ${unterkunft.getBewertung()} Sterne</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 container-fluid">
+                                        <div class="card-prize-buttons-row row">
+                                            <div class="card-price-frame col-6 col-md-12">
+                                                <h1 class="card-prize-text">${price}€</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+             
         <div class="container-fluid p-3 mb-5 container-top">
             <div class="row align-items-center justify-content-center">
                <form col-md-2 pt-3 action="/WebProjekt/AnswerPage "method="post">
