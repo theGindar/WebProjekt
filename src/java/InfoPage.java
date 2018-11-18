@@ -39,9 +39,9 @@ public class InfoPage extends HttpServlet {
             if(request.getParameter("hotelID") != null){
                 hotelID = Integer.parseInt(request.getParameter("hotelID"));
             }else{
-                hotelID = 1; // ändern
+                hotelID = 1; // Wenn kein Hotel ausgewählt wird, wird das Hotel mit der ID 1 angezeigt --> für Entwicklung
             }
-              // preis nicht vergessen !!!!!!!!!!
+            //Erhält die Daten aus der Datenbank und übermittelt sie an die InfoPage.jsp
             request.setAttribute("hotelID", hotelID);
             request.setAttribute("price", dbHelper.getPriceFromDB(hotelID));
             request.setAttribute("hotelname", dbHelper.getHotelNameFromDB(hotelID));
@@ -67,6 +67,6 @@ public class InfoPage extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "This servlet displays information of one hotel";
-    }// </editor-fold>
+    }
 
 }
