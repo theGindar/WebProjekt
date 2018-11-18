@@ -48,6 +48,7 @@ public class CreateDataBase extends HttpServlet {
         
         
     }
+    // createDB() 
     protected void createDB() throws Exception{
         Class.forName(DRIVER);
         Connection connection = DriverManager.getConnection(JDBC_URL);
