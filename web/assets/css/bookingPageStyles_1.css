@@ -1,0 +1,13 @@
+.bookingbutton{
+    background-color: #8888ff;
+    border-color: #8888ff;
+}
+
+body {
+    background-color: #dbecff;
+    padding-top: 50px;
+}
+
+.row {
+    font-size: 500%;
+}

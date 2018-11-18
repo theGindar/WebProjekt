@@ -43,6 +43,7 @@ public class BookingPageServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
 
+        String hotelid = (String) request.getParameter("hotelId");
         String name = (String) request.getParameter("name");
         String vorname = (String) request.getParameter("vorname");
         String stadt = (String) request.getParameter("stadt");

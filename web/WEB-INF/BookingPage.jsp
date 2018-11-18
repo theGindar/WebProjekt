@@ -12,14 +12,16 @@
     </jsp:attribute>
 
     <jsp:attribute name="headend">
-        <link rel="stylesheet" href="assets/css/searchPageStyles.css">
+        <link rel="stylesheet" href="assets/css/bookingPageStyles.css">
     </jsp:attribute>
 
     <jsp:attribute name="body">
+        
         <div class="container-fluid p-3 mb-5 container-top">
-            <div class="row">
+            <div class="row align-items-center justify-content-center">
                <form col-md-2 pt-3 action="/WebProjekt/AnswerPage "method="post">
                    <!--  Normales  einzeiliges  Eingabefeld  -->
+                   <div>${hotelId}</div>
                     <div class="form-group">
                         <input  type="text" class="form-control" id="name" placeholder="Name">
                     </div>

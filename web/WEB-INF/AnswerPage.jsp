@@ -12,15 +12,14 @@
     </jsp:attribute>
 
     <jsp:attribute name="headend">
-        <link rel="stylesheet" href="assets/css/searchPageStyles.css">
+        <link rel="stylesheet" href="assets/css/bookingPageStyles_1.css">
     </jsp:attribute>
 
     <jsp:attribute name="body">
         <div class="container-fluid p-3 mb-5 container-top">
-            <div class="row">
+            <div class="row align-items-center justify-content-center">
                 <form method="get">
-                    <div>Buchung erfolgreich</div>
-                    <div>Ihre Daten:</div>
+                    <div>Buchung erfolgreich!</div>
                     <div>${name}</div>
                     <div>${vorname}</div>
                     <div>${stadt}</div>
